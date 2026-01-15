@@ -17,7 +17,7 @@
     src: url("/static/font/Pretendard-Bold.subset.woff2") format(woff2);
 }
 
-/* 가본 */
+/* 기본 */
 * {
     padding: 0;
     margin: 0;
@@ -152,6 +152,11 @@ address, caption, em {
     height: 16px;
     background: url("https://i.jobkorea.kr/content/images/corporate/main_v2/icon_menu.png") no-repeat 50%;
 }
+.corporate-header .navigation .left-menu-list>li .button-all-menu.active i {
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 33'%3E%3Cg%3E%3Cg%3E%3Cpolygon fill='%23fff' stroke='%23fff' stroke-width='2' points='32.7,1.7 31.3,0.3 16.5,15.1 1.7,0.3 0.3,1.7 15.1,16.5 0.3,31.3 1.7,32.7 16.5,17.9 31.3,32.7 32.7,31.3 17.9,16.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+}
+/* javascript: click 했을 때, active 클래스 추가 */
 
 .corporate-header .sub-nav {
     display: none;

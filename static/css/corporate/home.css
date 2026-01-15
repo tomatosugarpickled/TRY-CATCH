@@ -17,7 +17,7 @@
     src: url("/static/font/Pretendard-Bold.subset.woff2") format(woff2);
 }
 
-/* 가본 */
+/* 기본 */
 * {
     padding: 0;
     margin: 0;
@@ -53,6 +53,21 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     font-size: 100%;
 }
+button, input, table, td, th {
+    font-size: 12px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+}
+/* button {
+    overflow: visible;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    vertical-align: middle;
+} */
 
 a, a:link, a:visited {
     color: #666;
@@ -183,6 +198,10 @@ address, caption, em {
 .start-section .border-round-section .button-box, .start-section .border-round-section .button-box a {
     display: flex;
     align-items: center;
+}
+.start-section .border-round-section .button-box a:hover {
+    color: #003cff;
+    border-color: #003cff;
 }
 .start-section .border-round-section .button-box a.blue {
     background: #003cff;
@@ -356,18 +375,236 @@ address, caption, em {
 
 /* 배너 */
     /* 광고 */
-    /*  */
+.row-article {
+    margin-top: 40px;
+}
+.col-2-section {
+    float: left;
+    width: 940px;
+}
+.event-banner-section .border-round-section {
+    overflow: hidden;
+    height: 80px;
+    border-radius: 15px;
+}
+/* .ad-container a img {
+    max-width: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+} */
+.col-1-small-section:nth-child(n+2) {
+    margin-left: 20px;
+}
+.col-1-small-section {
+    float: left;
+    width: 300px;
+}
+.sub-banner-section .border-round-section a {
+    height: 80px;
+    padding: 16px 0 0 30px;
+    background: url("https://i.jobkorea.kr/content/images/corporate/main_v2/background_sub_banner.png");
+    color: #fff;
+}
+.sub-banner-section .border-round-section a .description {
+    line-height: 18px;
+    font-size: 14px;
+}
+.sub-banner-section .border-round-section a .title {
+    display: inline-block;
+    margin-top: 4px;
+    padding-right: 17px;
+    background: url("https://i.jobkorea.kr/content/images/corporate/main_v2/arrow_9x24_white.png") 100% no-repeat;
+    line-height: 28px;
+    font-size: 18px;
+}
+
+    /* 서비스 Q&A */
+.service-section {
+    margin-top: 18px;
+    padding-bottom: 20px;
+}
+.service-section .common-h2 {
+    padding-left: 15px;
+    position: relative;
+    display: inline-block;
+}
+.service-section .service-list {
+    margin-top: 14px;
+}
+.service-section .service-list li {
+    position: relative;
+    float: left;
+    width: calc(25% + 1px);
+}
+.service-section .service-list li:nth-child(n+2) {
+    margin-left: -1px;
+}
+
+.service-section .service-list li:nth-child(n+5) {
+    margin-top: -1px;
+}
+.service-section .service-list li:nth-child(4n+1) {
+    width: 25%;
+    margin-left: 0;
+}
+.service-section .service-list li button {
+    display: block;
+    width: 100%;
+    height: 206px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+}
+.service-section .service-list li:nth-child(-n+4) button {
+    border-top-color: rgba(0, 0, 0, 0);
+}
+.service-section .service-list li:first-child button {
+    border-left-color: rgba(0, 0, 0, 0);
+    border-radius: 14px 0 0 0;
+}
+.service-section .service-list li .number {
+    font-size: 32px;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+.service-section .service-list li .text {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 24px;
+}
+.service-section .service-list li:nth-child(n+4) button {
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+.service-section .service-list li:nth-child(4) button {
+    border-right-color: rgba(0, 0, 0, 0);
+    border-radius: 0 14px 0 0;
+}
+
+.service-section .service-list li:nth-child(8) button {
+    border-right-color: rgba(0, 0, 0, 0);
+    border-radius: 0 0 14px 0;
+}
+.service-section .service-list li:nth-child(5) button {
+    border-left-color: rgba(0, 0, 0, 0);
+    border-radius: 0 0 0 14px;
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* 공지사항, FAQ, 고객센터 */
+.bottom-article {
+    margin-top: 60px;
+    padding: 36px 0;
+    background: #fff;
+}
+/* .col-3-section {
+    width: 100%;
+} */
+.bottom-article .bottom-notice-section {
+    float: left;
+    width: 410px;
+}
+.common-h2, .common-h2>a {
+    font-size: 18px;
+    color: #1a1a1a;
+    line-height: 24px;
+}
+.bottom-article .common-h2 a {
+    float: right;
+    padding: 0 12px 0 0;
+    font-weight: 400;
+    color: #666;
+    background-image: url("https://i.jobkorea.kr/content/images/corporate/main_v2/arrow_6x16_gray.png");
+    font-size: 12px;
+}
+.common-h2>a {
+    display: inline-block;
+    padding: 0 19px 0 15px;
+    background: url("https://i.jobkorea.kr/content/images/corporate/main_v2/arrow_9x24_black.png") 100% no-repeat;
+}
+.bottom-article .board-list {
+    margin-top: 20px;
+}
+.bottom-article .board-list li {
+    position: relative;
+    padding-left: 12px;
+    line-height: 17px;
+}
+.bottom-article .board-list li:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "·";
+}
+.bottom-article .board-list li .title {
+    float: left;
+    width: calc(100% - 60px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.bottom-article .board-list li .date {
+    float: right;
+    width: 60px;
+    color: #666;
+    text-align: right;
+}
+.bottom-article .board-list li:nth-child(n+2) {
+    margin-top: 12px;
+}
+.bottom-article .faq-section {
+    float: left;
+    width: 410px;
+    margin-left: 70px;
+}
+.bottom-article .faq-section .board-list li a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.bottom-article .center-section {
+    float: left;
+    width: 300px;
+    margin-left: 70px;
+}
+.bottom-article .center-section .number {
+    font-size: 40px;
+    letter-spacing: -1px;
+    margin-top: 11px;
+    font-weight: 700;
+    color: #39f;
+    line-height: 53px;
+}
+.bottom-article .center-section table {
+    margin-top: 8px;
+}
+.bottom-article .center-section table th {
+    width: 47px;
+    padding: 6px 0;
+    line-height: 17px;
+    text-align: left;
+}
+.bottom-article .center-section table td {
+    line-height: 17px;
+}
+.line-list li:first-child {
+    padding-left: 0;
+}
+.line-list li {
+    position: relative;
+    float: left;
+    padding: 0 10px;
+}
+/* .line-list li:last-child {
+    padding-right: 0;
+} */
+ .line-list li:nth-child(n+2):before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 10px;
+    background: #e6e6e6;
+}
