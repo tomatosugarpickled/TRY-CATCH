@@ -5,8 +5,836 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="/static/css/skill-log/dashboard.css" />
+        <link rel="stylesheet" href="/static/css/skill-log/header.css" />
+        <link rel="stylesheet" href="/static/css/community/footer.css">
     </head>
     <body class="skill-log-body">
+        <div id="headerWrap" class="gnbTheme1200 devGnbContainer">
+            <div id="header" class="season_bg">
+                <!--신입공채 메뉴일경우 클래스 start-sub 추가 -->
+                <!-- // headInner -->
+                <div class="headInner">
+                    <h1 class="jkLogo">
+                        <a href="">
+                            <img
+                                height="78"
+                                src="https://file2.jobkorea.co.kr/Net/Mng/Image/LogoImage?FN=2025/09/JK-PC-최종수정_1_3.gif"
+                                alt="JOBKOREA"
+                            />
+                        </a>
+                    </h1>
+
+                    <!-- // search -->
+                    <div class="search" id="searchWrap">
+                        <h2 class="skip">검색</h2>
+                        <form
+                            name="global_seek"
+                            id="AKCFrm"
+                            autocomplete="off"
+                            action="/Search/"
+                            target="_self"
+                        >
+                            <fieldset>
+                                <legend>Smart Match 통합검색</legend>
+                                <div class="smKey">
+                                    <input
+                                        type="text"
+                                        id="stext"
+                                        title="검색어 입력"
+                                        name="stext"
+                                        placeholder=""
+                                        maxlength="30"
+                                        data-vvipkeyword=""
+                                        data-vvipkwrdno="0"
+                                    />
+                                    <!-- // 기존 자동완성 들어갈 영역 -->
+                                    <div id="AKCDiv" class="autoSearch">
+                                        <!-- // 기능 끈 상황 -->
+                                        <div
+                                            id="SearchStop"
+                                            class="autoSearchStop"
+                                        >
+                                            <p class="btnArrow" id="btnArrow_C">
+                                                <button
+                                                    type="button"
+                                                    title="열림"
+                                                    class="devAcDisabledInfoOpen"
+                                                >
+                                                    <span class="blind"
+                                                        >열림</span
+                                                    >
+                                                </button>
+                                            </p>
+                                            <div
+                                                class="searchStopDesc"
+                                                id="StopDesc"
+                                            >
+                                                <p class="description">
+                                                    키워드를 입력하시면<br />
+                                                    검색어를 추천해드립니다.
+                                                </p>
+                                                <p class="btnOdd">
+                                                    <button
+                                                        type="button"
+                                                        id="devAcOn"
+                                                    >
+                                                        자동완성 켜기
+                                                    </button>
+                                                    <span>|</span>
+                                                    <button
+                                                        type="button"
+                                                        id="devAcInfoClose"
+                                                        class="odd"
+                                                    >
+                                                        닫기
+                                                    </button>
+                                                </p>
+                                            </div>
+                                            <p
+                                                class="btnArrow btnArrowClose"
+                                                id="btnArrow_O"
+                                            >
+                                                <button
+                                                    type="button"
+                                                    title="닫힘"
+                                                    class="devAcDisabledInfoClose"
+                                                >
+                                                    <span class="blind"
+                                                        >닫힘</span
+                                                    >
+                                                </button>
+                                            </p>
+                                            <div class="bg"></div>
+                                        </div>
+
+                                        <!-- // 기능 켠 상황 -->
+                                        <div
+                                            id="SearchStart"
+                                            class="autoSearchStart"
+                                        >
+                                            <div
+                                                class="iframeHolder"
+                                                data-url=""
+                                                data-id="AKCIfrm"
+                                                data-name="AKCIfrm"
+                                                data-title="자동검색"
+                                                data-allowtransparency="true"
+                                            >
+                                                <div
+                                                    class="searchWrap"
+                                                    id="devSearchWrap"
+                                                >
+                                                    <div class="searchList">
+                                                        <h3>검색어 자동완성</h3>
+                                                        <ul id="AKCIDiv"></ul>
+
+                                                        <p class="btnOdd">
+                                                            <button
+                                                                type="button"
+                                                                id="devAcOff"
+                                                                class="odd"
+                                                            >
+                                                                자동완성 끄기
+                                                            </button>
+                                                            <span>|</span>
+                                                            <button
+                                                                type="button"
+                                                                id="devAcInfoClose2"
+                                                                class="odd"
+                                                            >
+                                                                닫기
+                                                            </button>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bg"></div>
+                                        </div>
+                                    </div>
+                                    <!-- 기존 자동완성 들어갈 영역 // -->
+                                    <input
+                                        type="submit"
+                                        value="검색"
+                                        class="submit spGnb"
+                                        id="common_search_btn"
+                                    />
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!-- search // -->
+
+                    <!-- // 배너 영역 -->
+                    <div class="headBann">
+                        <strong class="skip">잡코리아 주요 서비스</strong>
+                        <div class="bannBxAlignRow">
+                            <a
+                                href=""
+                                target="_blank"
+                                title="새창 열림"
+                                class="bann-logo bann-albamon"
+                                >알바몬</a
+                            >
+                            <a
+                                href=""
+                                target="_blank"
+                                title="새창 열림"
+                                class="bann-logo bann-gamejob"
+                                >게임잡</a
+                            >
+                            <a
+                                href=""
+                                target="_blank"
+                                title="새창 열림"
+                                class="bann-logo bann-ninehire"
+                                >나인하이어</a
+                            >
+                            <a
+                                href=""
+                                target="_blank"
+                                title="새창 열림"
+                                class="bann-logo bann-klik"
+                                >클릭
+                                <div class="bann-log__tooltip">
+                                    외국인 인재 채용 지금 바로!
+                                </div></a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- headInner // -->
+
+                <div id="headNavBar" class="headNavBar dev-headNavBar">
+                    <div class="navInner dev-navInner">
+                        <div class="jkNavArea dev-jkNavArea">
+                            <h2 class="skip">주요서비스</h2>
+                            <ul class="serviceNav dev-serviceNav">
+                                <li id="gnbGi" class="navItem">
+                                    <a href="" class="linkItem"
+                                        ><span class="spNav"
+                                            ><span class="txIr"
+                                                >채용정보</span
+                                            ></span
+                                        ></a
+                                    >
+                                </li>
+                                <li class="navItem onepick" id="onepick">
+                                    <a href="" class="linkItem"
+                                        ><span class="spNav"
+                                            >합격축하금</span
+                                        ></a
+                                    >
+                                </li>
+                                <li id="gnbStart" class="navItem start">
+                                    <a href="" class="linkItem"
+                                        ><span class="spNav"
+                                            ><span class="txIr"
+                                                >공채정보</span
+                                            ></span
+                                        ></a
+                                    >
+                                </li>
+                                <li
+                                    id="gnbInternship"
+                                    class="navItem internship"
+                                >
+                                    <a href="" class="linkItem"
+                                        ><span class="spNav">신입·인턴</span></a
+                                    >
+                                </li>
+                                <li id="gnbSalary" class="navItem salary">
+                                    <a href="" class="linkItem">
+                                        <span class="spNav"
+                                            ><span class="txIr"
+                                                >기업·연봉</span
+                                            ></span
+                                        >
+                                    </a>
+                                </li>
+                                <li id="futurelab" class="navItem futurelab">
+                                    <a href="" class="linkItem">
+                                        <span class="spNav"
+                                            ><span class="txIr"
+                                                >취업전략</span
+                                            ></span
+                                        >
+                                    </a>
+                                </li>
+                                <li
+                                    id="gnbQna"
+                                    class="navItem qna gnbQna-fixed"
+                                >
+                                    <a href="" class="linkItem">
+                                        <span class="spNav"
+                                            ><span class="txIr"
+                                                >취업톡톡</span
+                                            ></span
+                                        >
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- my 홈일경우 클래스 myPage -->
+                            <ul id="devMyPage" class="userNav">
+                                <ul class="userNav">
+                                    <li class="userNav-item login">
+                                        <a
+                                            href=""
+                                            class="txt-button login-button"
+                                            >로그인</a
+                                        >
+                                    </li>
+                                    <li class="userNav-item join">
+                                        <a
+                                            href=""
+                                            class="txt-button join-button"
+                                            >회원가입</a
+                                        >
+                                    </li>
+                                    <li class="userNav-item corp">
+                                        <a href="" target="_blank"
+                                            ><span class="spGnb"
+                                                >기업서비스</span
+                                            ></a
+                                        >
+                                        <div class="lyMyArea">
+                                            <div class="myInner">
+                                                <div class="lyRow">
+                                                    <div class="btnRowWrap">
+                                                        <a href=""
+                                                            >기업회원 로그인</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div class="myLists">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >기업회원
+                                                                    홈</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >공고등록</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >공고·지원자
+                                                                    관리</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >인재정보</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >원픽서비스
+                                                                    안내</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >기업회원
+                                                                    서비스
+                                                                    안내</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >서치펌
+                                                                    서비스
+                                                                    안내</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                ><span
+                                                                    class="tx"
+                                                                    >기업라운지</span
+                                                                ></a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="icnArr spGnb"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lyNavArea">
+                        <h3 class="skip">채용정보 세부메뉴</h3>
+                        <div class="lyNavWrap">
+                            <div class="lyNavInner side">
+                                <div class="lyRow row01">
+                                    <div class="lyRow-inner">
+                                        <div class="col-title">
+                                            나에게 딱 맞는 공고
+                                            <i class="watch"></i>
+                                        </div>
+                                        <div class="lyCol subCol">
+                                            <div class="colItem">
+                                                <strong class="titArea">
+                                                    <a href="" class="tit gnbGi"
+                                                        >채용 탐색</a
+                                                    >
+                                                </strong>
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >지역별 공고</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >직무별 공고</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >산업별 공고</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >기업별 공고</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >TOP100 공고</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >AI 전문직
+                                                                공고</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >반도체·이차전지
+                                                                공고</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="colItem">
+                                                <strong class="titArea">
+                                                    <a
+                                                        href=""
+                                                        class="tit gnbTheme"
+                                                        >전문 채용</a
+                                                    >
+                                                </strong>
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >전문채용관</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="colItem">
+                                                <strong class="titArea">
+                                                    <a
+                                                        href=""
+                                                        class="tit headhunting"
+                                                        >채용 대행</a
+                                                    >
+                                                </strong>
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >헤드헌팅
+                                                                공고</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lyCol subCol">
+                                            <div class="colItem">
+                                                <strong class="titArea">
+                                                    <a
+                                                        href=""
+                                                        class="tit onepick"
+                                                        >합격축하금 원픽</a
+                                                    >
+                                                </strong>
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >합격축하금
+                                                                공고</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >원픽서비스
+                                                                안내</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="colItem">
+                                                <strong class="titArea">
+                                                    <a
+                                                        href=""
+                                                        class="tit gnbStart"
+                                                        >공채정보</a
+                                                    >
+                                                </strong>
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >1000대기업
+                                                                공채</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >공채달력</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >공공기관
+                                                                채용일정</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="colItem">
+                                                <strong class="titArea">
+                                                    <a
+                                                        href=""
+                                                        class="tit internship"
+                                                        >신입·인턴</a
+                                                    >
+                                                </strong>
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >신입·인턴공고</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lyRow-inner">
+                                        <div class="col-title">
+                                            콘텐츠 탐색 <i class="quest"></i>
+                                        </div>
+                                        <div class="lyCol subCol">
+                                            <div class="colItem">
+                                                <strong class="titArea"
+                                                    ><a
+                                                        href=""
+                                                        class="tit gnbSalary"
+                                                        >기업·연봉</a
+                                                    ></strong
+                                                >
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >기업리뷰</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >기업분석
+                                                                보고서</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >슈퍼기업관</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href="">연봉</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lyCol subCol">
+                                            <div class="colItem">
+                                                <strong class="titArea corp"
+                                                    ><a
+                                                        href=""
+                                                        class="tit career"
+                                                        >커리어 소식</a
+                                                    ></strong
+                                                >
+                                                <div class="listBx">
+                                                    <ul class="list-col">
+                                                        <li>
+                                                            <a href=""
+                                                                >콘텐츠LAB</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >합격자소서</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >인적성·면접
+                                                                후기</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >직무 인터뷰</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="colItem">
+                                                <strong class="titArea"
+                                                    ><a
+                                                        href=""
+                                                        class="tit jatTest"
+                                                        >실전공략</a
+                                                    ></strong
+                                                >
+                                                <div class="listBx">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""
+                                                                >인성역량검사</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >공기업 모의고사
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >역량테스트(MICT)</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="colItem">
+                                                <strong class="titArea"
+                                                    ><a
+                                                        href=""
+                                                        class="tit tools"
+                                                        >취업 TOOL</a
+                                                    ></strong
+                                                >
+                                                <div class="listBx">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""
+                                                                >취업 TOOL
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href=""
+                                                                >문서서식
+                                                                자료</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lyCol subCol">
+                                            <div class="colItem">
+                                                <strong class="titArea"
+                                                    ><a href="" class="tit talk"
+                                                        >커리어 고민</a
+                                                    ></strong
+                                                >
+                                                <div class="listBx">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""
+                                                                >취업톡톡</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lyCol bottom-menus">
+                                        <!-- CASE : 비로그인 -->
+                                        <ul>
+                                            <li>
+                                                <a href=""
+                                                    >자주하는 질문 FAQ<i
+                                                        class="faq"
+                                                    ></i
+                                                ></a>
+                                            </li>
+                                            <li>
+                                                <a href=""
+                                                    >주요 소식은 공지사항<i
+                                                        class="emoji32_loudspeaker"
+                                                    ></i
+                                                ></a>
+                                            </li>
+                                            <li>
+                                                <a href=""
+                                                    >도움이 필요할 땐 고객센터<i
+                                                        class="emoji32_headset"
+                                                    ></i
+                                                ></a>
+                                            </li>
+                                            <li>
+                                                <a href=""
+                                                    >혜택 가득 이벤트<i
+                                                        class="gift"
+                                                    ></i
+                                                ></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sideCol side5h">
+                                    <!-- CASE: 비로그인 || 기업회원, 개인회원 로그인 시 삭제 -->
+                                    <div class="sideList bb">
+                                        <p class="col-title">
+                                            잡코리아 회원이 아니라면?
+                                            <i class="notMember"></i>
+                                        </p>
+                                        <p>
+                                            <span class="desc"
+                                                >간단 프로필 등록하고</span
+                                            >
+                                            <a
+                                                class="tit devNeedLogin"
+                                                data-url="https://www.jobkorea.co.kr/User/MyPage"
+                                                >포지션 제안 받아보기<i
+                                                    class="line_line_arrow_right"
+                                                ></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                    <div class="colItem">
+                                        <strong class="titArea">
+                                            <a
+                                                data-url="https://www.jobkorea.co.kr/User/MyPage"
+                                                class="tit devNeedLogin"
+                                                >개인회원 홈</a
+                                            >
+                                        </strong>
+                                        <div class="listBx">
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        data-url="https://www.jobkorea.co.kr/User/ResumeMng"
+                                                        class="devNeedLogin"
+                                                        >이력서 관리</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        data-url="https://www.jobkorea.co.kr/User/ApplyMng"
+                                                        class="devNeedLogin"
+                                                        >입사지원 현황</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        data-url="https://www.jobkorea.co.kr/User/PositionOffer"
+                                                        class="devNeedLogin"
+                                                        >포지션 제안</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        data-url="https://www.jobkorea.co.kr/User/Scrap"
+                                                        class="devNeedLogin"
+                                                        >스크랩 공고</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        data-url="https://www.jobkorea.co.kr/Text_User/User_Pwd.asp"
+                                                        class="devNeedLogin"
+                                                        >개인정보 수정</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- 배너영역 -->
+                                    <!-- CASE: 비로그인 / 개인회원-->
+                                    <div class="banner">
+                                        <img
+                                            src="https://i.jobkorea.kr/content/images/personal/main/nav_wrap_banner_new.png?202601061400"
+                                            alt="이직을 준비하는 가장 확실한 방법 원픽 알아보기"
+                                        />
+                                        <a
+                                            class="entire"
+                                            href=""
+                                            target="_blank"
+                                            >이직을 준비하는 가장 확실한 방법
+                                            원픽 알아보기</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jkNavDimm"></div>
+        <!-- GNB 개편 끝 //-->
         <div>
             <div class="skill-log-container">
                 <div class="skill-log-nav-container1">
@@ -38,18 +866,18 @@
                                                 class="nav-list-li-1 nav-list-li-2"
                                             >
                                                 <div class="nav-list-li-text">
-                                                    이벤트
+                                                    새 글 작성
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="nav-list-li">
-                                        <a href="">
+                                        <a href="my-post-list.html">
                                             <div
                                                 class="nav-list-li-1 nav-list-li-2"
                                             >
                                                 <div class="nav-list-li-text">
-                                                    성공사례
+                                                    내 글 목록
                                                 </div>
                                             </div>
                                         </a>
@@ -261,8 +1089,12 @@
                                                 </div>
                                             </article>
                                         </div>
-                                        <div class="skill-log-first-post-container">
-                                            <div class="skill-log-first-post-contents">
+                                        <div
+                                            class="skill-log-first-post-container"
+                                        >
+                                            <div
+                                                class="skill-log-first-post-contents"
+                                            >
                                                 <article
                                                     class="skill-log-post-article"
                                                 >
@@ -523,7 +1355,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 이벤트
                                             </h3>
                                             <button
@@ -567,7 +1401,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -632,14 +1466,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             11월
                                                                             25일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >썸머</span
                                                                         >
                                                                     </p>
@@ -649,7 +1483,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -715,14 +1549,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             9월
                                                                             30일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Ken</span
                                                                         >
                                                                     </p>
@@ -732,7 +1566,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -798,14 +1632,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2024년
                                                                             12월
                                                                             9일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Tena</span
                                                                         >
                                                                     </p>
@@ -830,7 +1664,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 성공사례
                                             </h3>
                                             <button
@@ -874,7 +1710,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -939,14 +1775,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             12월
                                                                             29일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >LENA</span
                                                                         >
                                                                     </p>
@@ -956,7 +1792,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -1022,14 +1858,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             12월
                                                                             29일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Choi</span
                                                                         >
                                                                     </p>
@@ -1039,7 +1875,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -1101,14 +1937,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             12월
                                                                             17일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Grace</span
                                                                         >
                                                                     </p>
@@ -1133,7 +1969,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 채널톡 사용팁
                                             </h3>
                                             <button
@@ -1177,7 +2015,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -1240,14 +2078,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2026년
                                                                             1월
                                                                             6일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >jojo</span
                                                                         >
                                                                     </p>
@@ -1257,7 +2095,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -1323,14 +2161,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             12월
                                                                             2일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Carol</span
                                                                         >
                                                                     </p>
@@ -1340,7 +2178,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -1404,14 +2242,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             10월
                                                                             22일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Curtis</span
                                                                         >
                                                                     </p>
@@ -1436,7 +2274,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 비즈 인사이트
                                             </h3>
                                             <button
@@ -1480,7 +2320,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -1544,14 +2384,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             12월
                                                                             30일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Jupiter</span
                                                                         >
                                                                     </p>
@@ -1561,7 +2401,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -1626,14 +2466,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             9월
                                                                             22일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >May</span
                                                                         >
                                                                     </p>
@@ -1643,7 +2483,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -1703,14 +2543,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             7월
                                                                             31일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Laon</span
                                                                         >
                                                                     </p>
@@ -1735,7 +2575,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 비즈 인사이트
                                             </h3>
                                             <button
@@ -1779,7 +2621,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -1843,14 +2685,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             12월
                                                                             30일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Jupiter</span
                                                                         >
                                                                     </p>
@@ -1860,7 +2702,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -1925,14 +2767,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             9월
                                                                             22일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >May</span
                                                                         >
                                                                     </p>
@@ -1942,7 +2784,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -2002,14 +2844,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             7월
                                                                             31일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Laon</span
                                                                         >
                                                                     </p>
@@ -2034,7 +2876,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 워크북
                                             </h3>
                                             <button
@@ -2078,7 +2922,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -2142,14 +2986,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             7월
                                                                             30일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Ken</span
                                                                         >
                                                                     </p>
@@ -2159,7 +3003,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -2223,14 +3067,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2024년
                                                                             5월
                                                                             23일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Wendy</span
                                                                         >
                                                                     </p>
@@ -2240,7 +3084,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -2305,14 +3149,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2023년
                                                                             8월
                                                                             25일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Wendy</span
                                                                         >
                                                                     </p>
@@ -2337,7 +3181,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 개념허브
                                             </h3>
                                             <button
@@ -2381,7 +3227,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -2444,14 +3290,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             4월
                                                                             1일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Tena</span
                                                                         >
                                                                     </p>
@@ -2461,7 +3307,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -2517,14 +3363,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2024년
                                                                             10월
                                                                             16일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Tena</span
                                                                         >
                                                                     </p>
@@ -2534,7 +3380,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -2590,14 +3436,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2024년
                                                                             10월
                                                                             16일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Tena</span
                                                                         >
                                                                     </p>
@@ -2622,7 +3468,9 @@
                                 <div class="skill-log-contents-container">
                                     <div class="skill-log-contents-wrap">
                                         <div class="skill-log-contents-top">
-                                            <h3 class="skill-log-contents-top-word">
+                                            <h3
+                                                class="skill-log-contents-top-word"
+                                            >
                                                 뉴스룸
                                             </h3>
                                             <button
@@ -2666,7 +3514,7 @@
                                         <div class="sc-dc7c329c-3 gDGmuZ">
                                             <div class="sc-dc7c329c-4 eEeFvs">
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="vertical"
@@ -2730,14 +3578,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2026년
                                                                             1월
                                                                             5일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Channel
                                                                             Talk</span
                                                                         >
@@ -2748,7 +3596,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -2815,14 +3663,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             11월
                                                                             27일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Channel
                                                                             Talk</span
                                                                         >
@@ -2833,7 +3681,7 @@
                                                     </div>
                                                 </article>
                                                 <article
-                                                    class=" skill-log-post-article"
+                                                    class="skill-log-post-article"
                                                 >
                                                     <div
                                                         direction="horizontal"
@@ -2899,14 +3747,14 @@
                                                                         class="skill-log-top-rate-title-text-date-p"
                                                                     >
                                                                         <time
-                                                                            class=" skill-log-top-rate-title-text-date-time"
+                                                                            class="skill-log-top-rate-title-text-date-time"
                                                                             >2025년
                                                                             11월
                                                                             20일</time
                                                                         >
                                                                         ·
                                                                         <span
-                                                                            class=" skill-log-top-rate-title-text-date-span"
+                                                                            class="skill-log-top-rate-title-text-date-span"
                                                                             >Channel
                                                                             Talk</span
                                                                         >
@@ -2931,101 +3779,349 @@
                         </div>
                     </div>
                 </div>
-                <div class="sc-a7d0f03e-5 bDvTUz">
-                    <div class="FooterContact_container__TsycH">
-                        <div class="FooterContact_wrapper__HV01s">
-                            <h4
-                                class="WrapText_h4__Czn4n WrapText_ko__C5VOH FooterContact_tag__jJdlB"
-                            >
-                                사이트에 무료로 채널톡을 붙이세요.
-                            </h4>
-                            <h2
-                                class="WrapText_h2__joq0B WrapText_ko__C5VOH FooterContact_title__zGKt9"
-                            >
-                                써보면서 이해하는게 가장 빠릅니다
-                            </h2>
-                            <div class="FooterContact_inputContainer__P_tcB">
-                                <div class="EmailInput_emailInput__faeAj">
-                                    <form class="EmailInput_form__LYm_S">
+            </div>
+            <div id="footer" class="footer footer--main">
+                <div class="footer__wrap">
+                    <h2 class="skip">잡코리아 기타 정보</h2>
+                    <div class="footer__notice">
+                        <div class="notice-wrap">
+                            <h3 class="blind">공지사항</h3>
+                            <dl class="footer__notice-wrap clear">
+                                <dt class="footer__notice-title">
+                                    <a href="" onclick=""
+                                        >공지사항<i
+                                            class="system_system_arrow_right"
+                                        ></i
+                                    ></a>
+                                </dt>
+                                <div class="footer__notice-text">
+                                    <div class="noti-slide">
                                         <div
-                                            class="InputBox_container__vMpyx EmailInput_input__vCem2"
+                                            class="swiper-container swiper-container-vertical"
                                         >
-                                            <div
-                                                class="InputBox_wrapper__CwakB"
+                                            <ul
+                                                class="swiper-wrapper lst"
+                                                style="
+                                                    transition-duration: 300ms;
+                                                    transform: translate3d(
+                                                        0px,
+                                                        -48px,
+                                                        0px
+                                                    );
+                                                "
                                             >
-                                                <div
-                                                    class="InputBox_inputWrapper__NOqhF"
+                                                <li
+                                                    class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                                                    data-swiper-slide-index="2"
+                                                    style="height: 24px"
                                                 >
-                                                    <div
-                                                        class="InputBox_placeholder__IQ_hz InputBox_overlap__Q_irS"
+                                                    <a href="" onclick=""
+                                                        >[공지] 기업회원 대상
+                                                        상품 일부 가격조정
+                                                        안내</a
                                                     >
-                                                        회사 이메일을
-                                                        입력해주세요
-                                                    </div>
-                                                    <input
-                                                        class="InputBox_input__SNttk InputBox_inheritTextAlign__pHNIK"
-                                                        type="email"
-                                                        error=""
-                                                        value=""
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div></div>
-                                        <div
-                                            class="EmailInput_button__2U4A4 Button_button__md6zo"
-                                            role="presentation"
-                                        >
-                                            <div
-                                                class="Button_buttonContent__xLzUx"
-                                            >
-                                                <div
-                                                    class="Button_buttonText__8qWsg"
+                                                </li>
+                                                <li
+                                                    class="swiper-slide swiper-slide-prev"
+                                                    data-swiper-slide-index="0"
+                                                    style="height: 24px"
                                                 >
-                                                    <div
-                                                        class="Svg_svgIcon__OiUte EmailInput_buttonIcon__e5yf7"
-                                                        width="0"
-                                                        height="0"
-                                                        style="
-                                                            width: 20px;
-                                                            height: 20px;
-                                                        "
+                                                    <a href="" onclick=""
+                                                        >[무료] 잡코리아 더
+                                                        리부트 컨퍼런스ㅣAI로
+                                                        채용을 새롭게</a
                                                     >
-                                                        <div>
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="24"
-                                                                height="24"
-                                                                viewBox="0 0 24 24"
-                                                                class="injected-svg"
-                                                                data-src="/legacy/icons/lightning-filled.svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                style="
-                                                                    width: 20px;
-                                                                    height: 20px;
-                                                                "
-                                                            >
-                                                                <path
-                                                                    fill-rule="evenodd"
-                                                                    d="M13.9656 2.32286C14.4478 1.21011 13.0167 0.266599 12.184 1.14827L3.4882 10.3556C2.48435 11.4185 3.23789 13.1667 4.69988 13.1667H8.34999L6.03435 18.5105C5.55215 19.6232 6.98327 20.5667 7.81596 19.6851L16.5118 10.4777C17.5156 9.41481 16.7621 7.66666 15.3001 7.66666H11.65L13.9656 2.32286Z"
-                                                                ></path>
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="EmailInput_buttonText___vIIe"
+                                                </li>
+                                                <li
+                                                    class="swiper-slide swiper-slide-active"
+                                                    data-swiper-slide-index="1"
+                                                    style="height: 24px"
+                                                >
+                                                    <a href="" onclick=""
+                                                        >[VOICE WANTED]
+                                                        보이스피싱범 목소리
+                                                        공개수배</a
                                                     >
-                                                        무료로 시작하기
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                </li>
+                                                <li
+                                                    class="swiper-slide swiper-slide-next"
+                                                    data-swiper-slide-index="2"
+                                                    style="height: 24px"
+                                                >
+                                                    <a href="" onclick=""
+                                                        >[공지] 기업회원 대상
+                                                        상품 일부 가격조정
+                                                        안내</a
+                                                    >
+                                                </li>
+                                                <li
+                                                    class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                                                    data-swiper-slide-index="0"
+                                                    style="height: 24px"
+                                                >
+                                                    <a href="" onclick=""
+                                                        >[무료] 잡코리아 더
+                                                        리부트 컨퍼런스ㅣAI로
+                                                        채용을 새롭게</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                            <span
+                                                class="swiper-notification"
+                                                aria-live="assertive"
+                                                aria-atomic="true"
+                                            ></span>
                                         </div>
-                                    </form>
-                                    <div></div>
+                                    </div>
                                 </div>
+                            </dl>
+                            <div class="ftr-right">
+                                <ul class="list-service">
+                                    <li>
+                                        <a
+                                            href=""
+                                            target="_blank"
+                                            title="새창"
+                                            class="footer__help-link"
+                                            onclick=""
+                                            >톡톡 상담하기
+                                            <i
+                                                class="system_system_arrow_right"
+                                            ></i
+                                        ></a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href=""
+                                            target="_blank"
+                                            title="새창"
+                                            class="footer__help-link"
+                                            onclick=""
+                                        >
+                                            FAQ 바로가기<i
+                                                class="system_system_arrow_right"
+                                            ></i
+                                        ></a>
+                                    </li>
+                                </ul>
+                                <ul class="ftr_sns">
+                                    <li class="sns-item">
+                                        <a
+                                            href=""
+                                            target="_blank"
+                                            title="페이스북"
+                                            class="footer__sns-item--facebook"
+                                            onclick=""
+                                        >
+                                            <span class="skip">페이스북</span
+                                            ><i class="footer_facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="sns-item">
+                                        <a
+                                            href=""
+                                            target="_blank"
+                                            title="인스타그램"
+                                            class="footer__sns-item--instagram"
+                                            onclick=""
+                                            ><span class="skip">인스타그램</span
+                                            ><i class="footer_instagram"></i
+                                        ></a>
+                                    </li>
+                                    <li class="sns-item">
+                                        <a
+                                            href=""
+                                            target="_blank"
+                                            title="유튜브"
+                                            class="sns-item--youtube"
+                                            onclick=""
+                                        >
+                                            <span class="skip">유튜브</span
+                                            ><i class="footer_youtube"></i>
+                                        </a>
+                                    </li>
+                                    <li class="sns-item">
+                                        <a
+                                            href=""
+                                            target="_blank"
+                                            title="블로그"
+                                            class="footer__sns-item--blog"
+                                            onclick=""
+                                            ><span class="skip">블로그</span
+                                            ><i class="footer_blog"></i
+                                        ></a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
+                    <div class="footer__service">
+                        <h3 class="blind">잡코리아 서비스 링크</h3>
+                        <ul>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >회사소개</a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >브랜드스토리</a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >이용약관</a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    ><strong>개인정보처리방침</strong></a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    ><strong>위치기반서비스이용약관</strong></a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >채용정보 API</a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >광고문의</a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >제휴문의</a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >고객센터</a
+                                >
+                            </li>
+                            <li>
+                                <a href="" target="_blank" onclick=""
+                                    >사이트맵</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__help">
+                        <h3 class="blind">고객센터</h3>
+                        <dl
+                            class="footer__help-wrap footer__help-wrap--working-hour"
+                        >
+                            <dt class="footer__help-title">고객센터</dt>
+                            <dd class="footer__help-text">1588-9350</dd>
+                            <dd class="footer__help-text">
+                                (평일
+                                <span class="tahoma">09:00 ~ 19:00</span> 토요일
+                                <span class="tahoma">09:00 ~ 15:00</span>)
+                            </dd>
+                        </dl>
+                        <dl class="footer__help-wrap footer__help-wrap--fax">
+                            <dt class="footer__help-title">FAX</dt>
+                            <dd class="footer__help-text">02-565-9351</dd>
+                        </dl>
+                        <dl class="footer__help-wrap footer__help-wrap--email">
+                            <dt class="footer__help-title">Email</dt>
+                            <dd class="footer__help-text">
+                                <a href="" class="footer__help-link"
+                                    >helpdesk@jobkorea.co.kr</a
+                                >
+                            </dd>
+                        </dl>
+                        <ul class="footer__sns"></ul>
+                    </div>
+
+                    <!-- 메인에서만 노출 -->
+                    <div class="footer__company">
+                        <div
+                            class="footer__company-item footer__company-item--ceo"
+                        >
+                            대표 : 윤현준
+                        </div>
+                        <div
+                            class="footer__company-item footer__company-item--business"
+                        >
+                            사업자등록번호 :
+                            <span>
+                                110-81-34859<a href="" class="business-button"
+                                    >사업자정보 확인 &gt;</a
+                                >
+                            </span>
+                        </div>
+                        <div
+                            class="footer__company-item footer__company-item--address"
+                        >
+                            주소 : 서울시 서초구 서초대로 301 동익성봉빌딩
+                            16~18층
+                        </div>
+                        <br />
+                        <div
+                            class="footer__company-item footer__company-item--report"
+                        >
+                            통신판매업 신고번호 : 2016-서울서초-0287호
+                        </div>
+                        <div
+                            class="footer__company-item footer__company-item--job"
+                        >
+                            직업정보제공사업 신고번호 : 서울청 제2016-11호
+                        </div>
+                        <div
+                            class="footer__company-item footer__company-item--job"
+                        >
+                            유료직업소개업 등록번호 :
+                            제2002-3210195-14-5-00035호
+                        </div>
+                        <br />
+                        <div class="copyright">
+                            ©
+                            <strong
+                                ><a href="" target="_blank">JOBKOREA</a></strong
+                            >
+                            LLC. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__award">
+                    <ul>
+                        <li class="footer__award-item footer__award-item--kbpi">
+                            <a href="" target="_blank"
+                                >2023-2025 한국산업의 브랜드파워 1위<br />(취업전문포털)</a
+                            >
+                        </li>
+                        <li class="footer__award-item footer__award-item--bcli">
+                            <a href="" target="_blank"
+                                >2022 브랜드 고객 충성도<br />대상 수상</a
+                            >
+                        </li>
+                        <li
+                            class="footer__award-item footer__award-item--ismsp"
+                        >
+                            <a href="" target="_blank"
+                                >[인증범위] 온라인 리크루팅 서비스<br />[유효기간]
+                                2024.02.21 ~ 2027.02.20</a
+                            >
+                        </li>
+                        <li class="footer__award-item footer__award-item--keis">
+                            <a href="" target="_blank"
+                                >한국고용정보원<br />고용서비스 우수기관 인증
+                                (2024)</a
+                            >
+                        </li>
+                        <li class="footer__award-item footer__award-item--spam">
+                            <a href="" target="_blank"
+                                >대량문자<br />전송자격인증 (2025)</a
+                            >
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

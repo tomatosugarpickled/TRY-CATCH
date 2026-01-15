@@ -1,3 +1,22 @@
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 400;
+    font-display: swap;
+    src: url("/static/font/Pretendard-Regular.subset.woff2") format(woff2);
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 600;
+    font-display: swap;
+    src: url("/static/font/Pretendard-SemiBold.subset.woff2") format(woff2);
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 700;
+    font-display: swap;
+    src: url("/static/font/Pretendard-Bold.subset.woff2") format(woff2);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -98,7 +117,7 @@ body {
     font-weight: 600;
     letter-spacing: -0.1px;
     line-height: normal;
-    color: var(--txt-black-darkest);
+    color: black;
     font-family: Pretendard;
 }
 
@@ -156,6 +175,7 @@ a, a:hover, a:link {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: black;
 }
 
 .skill-log-big-2 {
@@ -167,7 +187,7 @@ a, a:hover, a:link {
 .skill-log-ikon-1 {
     flex: 0 0 auto;
     margin: 0px;
-    color: inherit;
+    color: black;
     transition-delay: 0ms;
     transition-timing-function: cubic-bezier(0.3, 0, 0, 1);
     transition-duration: 150ms;
@@ -180,6 +200,7 @@ a, a:hover, a:link {
 
 .skill-log-channel-font {
     font-size: 15px;
+    color: black;
 }
 
 .skill-log-context40 {
@@ -207,7 +228,7 @@ a, a:hover, a:link {
 .skill-log-find-ikon1 {
     flex: 0 0 auto;
     margin: 0px;
-    color: rgba(0, 0, 0, 0.4);
+    color: black;
     transition-delay: 0ms;
     transition-timing-function: cubic-bezier(0.3, 0, 0, 1);
     transition-duration: 150ms;
@@ -263,7 +284,7 @@ a, a:hover, a:link {
     font-weight: bold;
     line-height: 34px;
     letter-spacing: -0.5px;
-    color: var(--txt-black-darkest);
+    color: black;
 }
 
 .skill-log-top-rate-photo-container:lang(ko), .skill-log-top-rate-photo-container:lang(ko) * {
@@ -346,46 +367,14 @@ a, a:hover, a:link {
     overflow: hidden;
 }
 
-.skill-log-top-rate-title-text::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.skill-log-top-rate-title-text-content {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    color: var(--txt-black-darker);
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+.skill-log-top-rate-title-text {
+    color: black !important;
 }
 
 .skill-log-top-rate-title-text-date {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.skill-log-top-rate-title-text-date-p {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    color: var(--txt-black-dark);
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
 }
 
 .skill-log-first-post-container {
@@ -484,22 +473,12 @@ a, a:hover, a:link {
     overflow: hidden;
 }
 
-.skill-log-top-rate-title-text::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
 .skill-log-top-rate-title-text-content {
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
-    color: var(--txt-black-darker);
+    color: black;
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -699,19 +678,6 @@ a, a:hover, a:link {
     z-index: 1;
 }
 
-.skill-log-top-rate-title-text-content {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    color: var(--txt-black-darker);
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-
 .skill-log-first-posts-date-container {
     display: flex;
     flex-direction: column;
@@ -723,7 +689,7 @@ a, a:hover, a:link {
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
-    color: var(--txt-black-dark);
+    color: black;
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
