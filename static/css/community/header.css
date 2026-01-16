@@ -87,7 +87,7 @@ button {
     align-items: center;
     position: relative;
     z-index: 4;
-    margin: 0 auto;
+    margin-left:400px;
     padding: 5px 0 6px;
 }
 
@@ -101,7 +101,8 @@ button {
 }
 
 #headerWrap #header .headInner .jkLogo a img {
-    height: 100%;
+   margin-top: 3px;
+    height: 83%;
 }
 
 #headerWrap #header .headInner .search:has(.autoSearch.autoSearchDisabledClose) {
@@ -117,7 +118,7 @@ button {
     width: 440px;
     height: 40px;
     margin-left: 20px;
-    border: 2px solid #7BA882;
+    border: 2px solid hsl(154.36deg 100% 21.57%);
     border-radius: 8px;
     background-color: #fff;
 }
@@ -460,7 +461,7 @@ legend {
     height: 36px;
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url();
+    background-image: url(/static/images/search_icon.png);
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 20px 20px;
@@ -592,7 +593,7 @@ legend {
     -webkit-justify-content: flex-start;
     -moz-box-pack: start;
     justify-content: flex-start;
-    margin: 0 auto;
+    margin-left:400px;
 }
 
 #headerWrap #header .headNavBar .jkNavArea {
