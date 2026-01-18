@@ -1,54 +1,70 @@
+// 알림 선택
+const notificationLiList = document.querySelectorAll(
+    ".notification-list ul li",
+);
+
 // 알림창 다음/이전 버튼
 DOMTokenList.prototype.includes = Array.prototype.includes;
 
-const swiperWrapper = document.querySelector(
+const notificationSwiperWrapper = document.querySelector(
     ".notification-modal .swiper-wrapper",
 );
-const nextButton = document.querySelector(
+const notificationNextButton = document.querySelector(
     ".notification-modal .swiper-button-next",
 );
-const prevButton = document.querySelector(
+const notificationPrevButton = document.querySelector(
     ".notification-modal .swiper-button-prev",
 );
-const swipterButtons = [nextButton, prevButton];
-let count = 0;
+const notificationSwiperButtons = [
+    notificationNextButton,
+    notificationPrevButton,
+];
+let notificationCount = 0;
 
-console.log(swiperWrapper);
+// console.log(swiperWrapper);
 
-swiperWrapper.style.transform = `translate(0px)`;
-swiperWrapper.style.width = `${notifications.length * 430}px`;
-swipterButtons[1].classList.add("swiper-button-disabled");
-// prevButton.classList.add("swiper-button-disabled");
+notificationSwiperWrapper.style.transform = `translate(0px)`;
+notificationSwiperWrapper.style.width = `${notificationLiList.length * 430}px`;
+notificationSwiperButtons[1].classList.add("swiper-button-disabled");
 
 // 알림창 닫기 버튼
 const notificationModal = document.querySelector(".notification-modal");
-const closeButton = document.querySelector(".notification-modal .close-button");
+const notificationCloseButton = document.querySelector(
+    ".notification-modal .close-button",
+);
+
+// 이벤트
+// 알림 선택
+notificationList.addEventListener("click", (e) => {
+    const notificationModal = document.querySelector(".notification-modal");
+    notificationModal.classList.add("active");
+});
 
 // 이전/다음 버튼
-swipterButtons.forEach((button) => {
+notificationSwiperButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
-        prevButton.classList.remove("swiper-button-disabled");
-        nextButton.classList.remove("swiper-button-disabled");
+        notificationPrevButton.classList.remove("swiper-button-disabled");
+        notificationNextButton.classList.remove("swiper-button-disabled");
 
         if (button.classList.includes("swiper-button-next")) {
-            count++;
-            swiperWrapper.style.transform = `translate(-${430 * count}px)`;
+            notificationCount++;
+            notificationSwiperWrapper.style.transform = `translate(-${430 * notificationCount}px)`;
 
-            if (count === notifications.length - 1) {
-                nextButton.classList.add("swiper-button-disabled");
+            if (notificationCount === notificationLiList.length - 1) {
+                notificationNextButton.classList.add("swiper-button-disabled");
             }
         } else {
-            count--;
-            swiperWrapper.style.transform = `translate(-${430 * count}px)`;
+            notificationCount--;
+            notificationSwiperWrapper.style.transform = `translate(-${430 * notificationCount}px)`;
 
-            if (count === 0) {
-                prevButton.classList.add("swiper-button-disabled");
+            if (notificationCount === 0) {
+                notificationPrevButton.classList.add("swiper-button-disabled");
             }
         }
     });
 });
 
 // 닫기 버튼
-closeButton.addEventListener("click", (e) => {
+notificationCloseButton.addEventListener("click", (e) => {
     notificationModal.classList.remove("active");
 });

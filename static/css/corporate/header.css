@@ -348,6 +348,7 @@ address, caption, em {
     float: left;
     padding: 10px;
     border-bottom: 1px solid #d9dfea;
+    cursor: pointer;
 }
 .notification-list ul li:last-child {
     border-bottom: 0;
@@ -357,7 +358,7 @@ address, caption, em {
     justify-content: space-between;
     margin-bottom: 8px;
 }
-.notification-list ul li .sender span:first-child {
+.notification-list ul li .sender .sender-name {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -367,10 +368,15 @@ address, caption, em {
     font-size: 16px;
     padding-bottom: 1px;
 }
-.notification-list ul li .sender span:first-child::before {
+.notification-list ul li .sender .sender-name::before {
     content: "From.";
     display: inline-block;
     padding-right: 5px;
+}
+.notification-list ul li .sender div {
+    display: flex;
+    gap: 5px;
+    line-height: 17px;
 }
 .notification-list ul li .sender span.new-badge {
     display: flex;
