@@ -568,7 +568,7 @@
             <div class="side-navigation">
                 <h2 class="skip">취업톡톡 세부메뉴</h2>
                 <div class="navi-top-area has-tooltip">
-                    <a href="" class="select-tooltip btn-question qnaSpB"
+                    <a href="javascript:;" class="select-tooltip btn-question qnaSpB"
                         >질문 · 글쓰기</a
                     >
                     <!-- [Dev] 툴팁오픈 : tooltip-open 클래스 추가 -->
@@ -697,11 +697,8 @@
                                     <span class="point qnaSpB">500</span>
                                 </div>
                                 <p class="tit">
-                                    <img
-                                        src="/static/images/Q_logo.png"
-                                        class="q-logo"
-                                    />
-                                    test
+                                   <i class="icoQ_on qnaSpB">Q</i>
+                                   test
                                 </p>
                                 <div class="post-state">
                                     <div class="post-cell-box">
@@ -798,19 +795,19 @@
                                                 class="share-layer tooltip-layer qnaSpA"
                                             >
                                                 <a
-                                                    href=""
+                                                    href="javascript:void(0)"
                                                     class="button button-facebook"
                                                     data-url="https://www.jobkorea.co.kr/net/User/Qstn/AnswerWrite?QstnNo=152584"
                                                     >페이스북</a
                                                 >
                                                 <a
-                                                    href=""
+                                                    href="javascript:void(0)"
                                                     class="button button-bookmark"
                                                     id="devBookMark"
                                                     >즐겨찾기</a
                                                 >
                                                 <a
-                                                    href=""
+                                                    href="javascript:void(0)"
                                                     class="button button-copy-url button-popup-component"
                                                     >URL복사</a
                                                 >
@@ -863,10 +860,9 @@
                                                 후배에게 답변하기 입력
                                             </legend>
                                             <div class="uiPlaceholder">
-                                                <span class="ph"
-                                                    >솔직하고 따뜻한 답변을
-                                                    남겨주세요.</span
-                                                >
+                                                <span class="ph">솔직하고 따뜻한 댓글을 남겨주세요.</span>
+                                                <!--로그인 시 <span class="ph ph_1" style="display: block;">솔직하고 따뜻한 댓글을 남겨주세요.</span>
+                                                <span class="ph ph_2" style="display: none;">-개인정보를 공유 및 요청하거나, 명예 훼손, 무단광고, 불법정보 유포 시 이에 대한 민형사상 책임은 작성자에게 있습니다.<br>-부적절한 댓글은 비노출 또는 서비스 이용 정지 사유가 될 수 있습니다.</span> -->
                                                 <textarea
                                                     class="devTxtAreaAnswerWrite"
                                                     name="Cntnt"
@@ -911,7 +907,6 @@
                                     <span>댓글 <span class="num">2</span></span>
                                 </div>
                             </div>
-
                             <div class="listWrap commonSecWrap">
                                 <ul class="answerArea">
                                     <li>
@@ -1116,8 +1111,9 @@
                                                 <ul class="cmtList replyWrap">
                                                     <!-- [Dev] 내 댓글일 경우 contSec에 클래스 myCmt 추가, cellBx 버튼: 삭제만 노출 -->
                                                 </ul>
-
-                                                <div
+                                                
+                                                <!-- 로그인시 댓글  -->
+                                                <!-- <div
                                                     class="writeBoxWrap cmtWrite case qnaSpB dev-ComtEditor"
                                                 >
                                                     <form
@@ -1225,7 +1221,7 @@
                                                                     <ul
                                                                         class="emotion-area"
                                                                     >
-                                                                        <!-- [dev] 이모티콘 총 36개 -->
+                                                                        이모티콘 총 36개 
                                                                         <li
                                                                             class="emotion-item"
                                                                         >
@@ -1255,7 +1251,7 @@
                                                         </fieldset>
                                                     </form>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <button
                                                 type="button"
                                                 class="btnCmtClose qnaSpA qnaBtnClose"
@@ -1494,7 +1490,8 @@
                                                 <ul class="cmtList replyWrap">
                                                     <!-- [Dev] 내 댓글일 경우 contSec에 클래스 myCmt 추가, cellBx 버튼: 삭제만 노출 -->
                                                 </ul>
-                                                <div class="writeBoxWrap cmtWrite case qnaSpB dev-ComtEditor">
+                                                <!-- 로그인시 댓글 -->
+                                                <!-- <div class="writeBoxWrap cmtWrite case qnaSpB dev-ComtEditor">
     <form id="" action="" method="post" oncopy="return false" oncut="return false" onpaste="return false">
         <fieldset>
             <legend>답변하기 입력</legend>
@@ -1520,7 +1517,7 @@
 <div class="layer-box-wrap emotion-layer">
     <p class="layer-header">이모티콘</p>
     <ul class="emotion-area">
-        <!-- [dev] 이모티콘 총 1개 -->
+         [dev] 이모티콘 총 1개 
         <li class="emotion-item"><button type="button" class="emotion-button"><img src="https://cdn-assets.jobkorea.co.kr/images/jk-pc/user/qna/emoticon/emoticon_1.png" data-idx="1" alt=""></button></li>
     </ul>
     <button type="button" class="btn-layer-close qnaSpB"><span class="blind">닫기</span></button>
@@ -1528,7 +1525,7 @@
             </div>
         </fieldset>
     </form>
-</div>
+</div> -->
                                             </div>
                                             <button
                                                 type="button"

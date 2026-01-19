@@ -38,23 +38,16 @@ URLCopyLayerBefore.addEventListener("click", (e) => {
     URLCopyLayer.classList.remove("attached");
 });
 
-// 게시글 좋아요
-const buttonLike = document.querySelector(".icon-like.qnaSpB.devQstnLike");
+// 게시글(질문) 좋아요(로그인)
+// const qstnLikeButton = document.querySelector(".devQstnLike");
 
-buttonLike.addEventListener("click", (e) => {
-    buttonLike.classList.toggle("on");
-});
+// if (qstnLikeButton) {
+//     qstnLikeButton.addEventListener("click", (e) => {
+//         qstnLikeButton.classList.toggle("on");
+//     });
+// }
 
-const buttonBookMark = document.querySelector(
-    ".btnBookmark.qnaSpB.devQnaDetailBookmark",
-);
-
-buttonBookMark.addEventListener("click", (e) => {
-    buttonBookMark.classList.toggle("on");
-});
-
-// 댓글 좋아요
-
+// 댓글 좋아요(로그인)
 const chatLikeButtonList = document.querySelectorAll(
     ".answerArea li div button.btnHeart.qnaSpB.devBtnAnswerLike",
 );
@@ -64,36 +57,92 @@ chatLikeButtonList.forEach((chatLike) => {
     });
 });
 
-// 대댓글
+// 대댓글(로그인)
 // 대댓글 (각각 개별 토글) - ?. 문법 없이
-const commentReplyButtonList = document.querySelectorAll(
-    ".answerArea li div button.btnCmt.devBtnComtList",
-);
+// const commentReplyButtonList = document.querySelectorAll(
+//     ".answerArea li div button.btnCmt.devBtnComtList",
+// );
 
-commentReplyButtonList.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
+// commentReplyButtonList.forEach((btn) => {
+//     btn.addEventListener("click", (e) => {
+//         // 내가 누른 버튼이 속한 li 찾기
+//         const li = btn.closest("li");
+//         const commentSec = li.querySelector(".commentSec");
+//         btn.classList.toggle("active");
+//         if (btn.classList.contains("active")) {
+//             commentSec.style.display = "block";
+//         } else {
+//             commentSec.style.display = "none";
+//         }
+//     });
+// });
 
-        // 내가 누른 버튼이 속한 li 찾기
-        const li = btn.closest("li");
-        if (li == null) {
-            return;
-        }
+// 북마크 등록(로그인)
+// const buttonBookMark = document.querySelector(
+//     ".btnBookmark.qnaSpB.devQnaDetailBookmark",
+// );
+// const bookMarkLayer = document.querySelector(
+//     ".book-mark-layer.tooltip-layer.qnaSpA",
+// );
 
-        // 그 li 안의 commentSec 찾기
-        const commentSec = li.querySelector(".commentSec");
-        if (commentSec == null) {
-            return;
-        }
+// buttonBookMark.addEventListener("click", (e) => {
+//     if (!buttonBookMark.classList.contains("on")) {
+//         bookMarkLayer.style.opacity = "1";
+//         setTimeout(() => {
+//             bookMarkLayer.style.opacity = "0";
+//         }, 975);
+//     } else {
+//         bookMarkLayer.style.opacity = "0";
+//     }
+//     buttonBookMark.classList.toggle("on");
+// });
 
-        // 버튼 active 토글
-        btn.classList.toggle("active");
+// 요소 선택（로그인）
+// const wrapper = document.querySelector(".writeBoxWrap.cmtWrite");
+// const textarea = wrapper.querySelector("textarea");
+// const uiPlaceholder = wrapper.querySelector(".uiPlaceholder");
+// const ph1 = wrapper.querySelector(".ph_1");
+// const ph2 = wrapper.querySelector(".ph_2");
 
-        // 해당 commentSec만 열고/닫기
-        if (btn.classList.contains("active")) {
-            commentSec.style.display = "block";
-        } else {
-            commentSec.style.display = "none";
-        }
+// // textarea 클릭(focus) 시
+// textarea.addEventListener("focus", function () {
+//     wrapper.classList.remove("case");
+//     uiPlaceholder.classList.add("focus");
+//     ph1.style.display = "none";
+//     ph2.style.display = "block";
+// });
+
+// // 글자 입력 시(로그인)
+// textarea.addEventListener("input", function () {
+//     if (textarea.value.trim() !== "") {
+//         ph2.style.display = "none";
+//     } else {
+//         // 글자가 없으면 ph2 다시 표시
+//         ph2.style.display = "block";
+//     }
+// });
+
+// // textarea blur 시 (원래대로 돌리려면)
+// textarea.addEventListener("blur", function () {
+//     if (textarea.value.trim() === "") {
+//         wrapper.classList.add("case");
+//         uiPlaceholder.classList.remove("focus");
+//         ph1.style.display = "block";
+//         ph2.style.display = "none";
+//     }
+// });
+
+// 요소 선택（비로그인）
+const wrapper = document.querySelector(".writeBoxWrap.cmtWrite");
+const textarea = wrapper.querySelector("textarea");
+const buttons = document.querySelectorAll(".btnBx.devComtRoot button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        alert("로그인 후 이용해주세요.");
     });
+});
+
+textarea.addEventListener("click", (e) => {
+    alert("로그인 후 이용해주세요.");
 });
