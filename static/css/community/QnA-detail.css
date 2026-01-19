@@ -1114,6 +1114,15 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     margin-top: 15px;
 }
 
+.lyViewBoard .commonSecWrap .cellBx .cell:before {
+    content: "";
+    display: inline-block;
+    margin: 0 10px;
+    width: 1px;
+    height: 12px;
+    background: #e8e8e8;
+}
+
 .lyViewBoard .commonSecWrap .cellBx .cell, .lyViewBoard .commonSecWrap .cellBx .cell a, .lyViewBoard .commonSecWrap .cellBx .cell button{
     display: inline-block;
     font-size: 12px;
@@ -1182,14 +1191,6 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
 }
 
 
-/* .lyViewBoard .commonSecWrap .cellBx .cell:before {
-    content: "";
-    display: inline-block;
-    margin: 0 10px;
-    width: 1px;
-    height: 12px;
-    background: #e8e8e8;
-} */
 
 .lyViewBoard .cmtWrite {
     position: relative;
@@ -1598,26 +1599,7 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     text-decoration: underline;
 }
 
-.q-logo{
-    width: 5%;
-    height: 5%;
-}
 
-/* 제목 줄: Q 로고(img) + 텍스트 수평/수직 정렬 */
-.viewContWrap .contBox .tit {
-    display: flex;
-    align-items: center;
-    gap: 10px;          /* 로고와 글자 사이 간격 */
-    flex-wrap: wrap;    /* 제목이 길면 다음 줄로 자연스럽게 */
-}
-
-/* Q 로고 크기/정렬 */
-.viewContWrap .contBox .tit .q-logo {
-    display: block;     /* 이미지 아래 불필요한 여백 제거 */
-    flex: 0 0 auto;     /* 줄어들지 않게 */
-    height: 28px;       /* 필요하면 24~32px 사이로 조절 */
-    width: auto;
-}
 
 /* 첫 번째 cell(조회수) 앞 구분선 제거 */
 .viewContWrap .post-cell-box .cell:first-child::before {
@@ -1694,4 +1676,11 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     height: 22px;
     background: url(/static/images/tpl_sp_btn.png) no-repeat 0 -65px;
 }
+
+.tooltip-layer.book-mark-layer {
+    display: block;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
 
