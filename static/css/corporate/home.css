@@ -146,6 +146,9 @@ address, caption, em {
     position: relative;
     transition-property: transform;
 }
+.top-notice-section .notice-box .swiper-slide{
+    height: 52px;
+}
 .top-notice-section .notice-box .swiper-slide a {
     overflow: hidden;
     white-space: nowrap;
@@ -258,7 +261,7 @@ address, caption, em {
 }
 .solution-section .start-list li:first-child .contents-box {
     padding: 33px 0 27px 28px;
-    background-image: url("https://i.jobkorea.kr/content/images/corporate/main_v2/offline_ninehire.png?2024070200");
+    background-image: url("/static/images/corporate/purple.png");
     background-size: cover;
     background-position: bottom;
 }
@@ -681,13 +684,13 @@ address, caption, em {
 .service-modal .swiper-container .swiper-wrapper .swiper-slide {
     width: 730px;
 }
-.swiper-slide {
+/* .swiper-slide {
     flex-shrink: 0;
     width: 100%;
     height: 100%;
     position: relative;
     transition-property: transform;
-}
+} */
 .common-modal h2 {
     font-size: 20px;
     letter-spacing: -.5px;

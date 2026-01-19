@@ -1,7 +1,5 @@
 // 변수 선언
 // 다음/이전 버튼
-DOMTokenList.prototype.includes = Array.prototype.includes;
-
 const serviceSwiperWrapper = document.querySelector(
     ".service-modal .swiper-wrapper",
 );
@@ -25,6 +23,26 @@ const serviceCloseButton = document.querySelector(
 // 서비스 선택
 const serviceButtonList = document.querySelectorAll(".service-list li button");
 
+// 공지사항
+const noticeBanner = document.querySelector(".notice-box .swiper-wrapper");
+let noticeCount = 0;
+
+noticeBanner.style.height = "260px";
+
+setInterval(() => {
+    noticeCount++;
+    noticeBanner.style.transform = `translate(0, -${52 * noticeCount}px)`;
+    noticeBanner.style.transition = `transform 0.5s`;
+
+    if (noticeCount === 4) {
+        setTimeout(() => {
+            noticeBanner.style.transform = `translate(0px)`;
+            noticeBanner.style.transition = `transform 0s`;
+        }, 500);
+        noticeCount = 0;
+    }
+}, 2000);
+
 // 이벤트
 // 이전/다음 버튼
 serviceSwiperButtons.forEach((button) => {
@@ -32,7 +50,7 @@ serviceSwiperButtons.forEach((button) => {
         servicePrevButton.classList.remove("swiper-button-disabled");
         serviceNextButton.classList.remove("swiper-button-disabled");
 
-        if (button.classList.includes("swiper-button-next")) {
+        if (button.classList.contains("swiper-button-next")) {
             serviceCount++;
             serviceSwiperWrapper.style.transform = `translate(-${730 * serviceCount}px)`;
 
@@ -67,8 +85,6 @@ serviceButtonList.forEach((button) => {
 
         servicePrevButton.classList.remove("swiper-button-disabled");
         serviceNextButton.classList.remove("swiper-button-disabled");
-
-        console.log(serviceCount);
 
         if (serviceCount === 0) {
             serviceSwiperButtons[1].classList.add("swiper-button-disabled");
