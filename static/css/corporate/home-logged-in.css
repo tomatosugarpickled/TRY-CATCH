@@ -566,3 +566,31 @@ fieldset, img {
 .data-none-box .contents-box .text {
     line-height: 20px;
 }
+.recruit-section .data-none-box .contents-box .button-list {
+    margin-top: 24px;
+}
+.data-none-box .contents-box .button-list {
+    display: table;
+    width: auto;
+    margin: 21px auto 0;
+}
+.data-none-box .contents-box .button-list li {
+    float: left;
+}
+.recruit-section .data-none-box .contents-box .button-list li .btn-blue {
+    border: none;
+    color: #fff;
+    background-color: #39f;
+}
+.recruit-section .data-none-box .contents-box .button-list li a {
+    display: block;
+    height: 42px;
+    padding: 0 24px;
+    font-weight: 500;
+    line-height: 42px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.col-1-large-section:nth-child(n+2) {
+    margin-left: 20px;
+}
