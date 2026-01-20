@@ -262,6 +262,7 @@ const imoticonButtons = document.querySelectorAll(".icon-emoticon.qnaSpB");
 const imoticonToolbars = document.querySelectorAll(
     ".layer-box-wrap.emotion-layer",
 );
+const buttonLayerCloses = document.querySelectorAll(".btn-layer-close.qnaSpB");
 
 imoticonButtons.forEach((imoticonButton, i) => {
     imoticonButton.addEventListener("click", (e) => {
