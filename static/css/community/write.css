@@ -2043,3 +2043,31 @@ h1, h2, h3, h4, h5, h6 {
     height: 17px;
     background-position: -262px -285px;
 }
+
+.emotion-item {
+    width: 95px;
+    height: 95px;
+    margin: 0 15px 15px 0;
+}
+
+.emotion-item:nth-child(6n) {
+    margin-right: 0;
+}
+
+.emotion-button {
+    width: 100%;
+    height: 100%;
+    border: solid 1px transparent;
+}
+
+.emotion-item img {
+    width: 100%;
+}
+
+.editor-util .icon-emotion.on::before {
+    background-position: -75px -459px;
+}
+
+.editor-util .icon-link.on::before {
+    background-position: -25px -459px;
+}

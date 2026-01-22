@@ -41,8 +41,9 @@ const myJobToggle = document.querySelector(
 );
 const myJobButton = document.querySelector(".select-tooltip.qnaSpA");
 
-// const contList = document.querySelector(".");
-
+const applyJobButton = document.querySelector(
+    ".btn-apply.devQnaWriteBizJobtypeApplyButton",
+);
 // 직무선배 버튼 이벤트(로그인)
 firstCheckButton.addEventListener("click", (e) => {
     jobCheckDrop.classList.toggle("on");
@@ -75,6 +76,12 @@ myJobButton.addEventListener("click", (e) => {
 //     recentSearchTab.style.display = "block";
 // });
 
+// 적용 버튼
+// 적용 버튼
+const jobApplyButton = document.querySelector(
+    ".btn-apply.devQnaWriteBizJobtypeApplyButton",
+);
+
 // 변수에 담아놓고 사용(로그인)
 let tempSelect = null;
 
@@ -85,47 +92,6 @@ jobToggleSelected.forEach((jobToggleSelected) => {
         }
         tempSelect = jobToggleSelected;
         jobToggleSelected.classList.add("selected");
-    });
-});
-
-const tabMenuButtons = document.querySelectorAll(
-    ".tab-box-wrap > .tab-menu > li.tab",
-);
-const categoryGroups = document.querySelectorAll(
-    ".tab-box-wrap > .category-group",
-);
-
-let tempSelectTab = null;
-let tempSelectCategory = null; // 카테고리 버튼용 추가
-
-tabMenuButtons.forEach((tabMenuButton, index) => {
-    tabMenuButton.addEventListener("click", (e) => {
-        // 이전 탭 selected 제거
-        if (tempSelectTab) {
-            tempSelectTab.classList.remove("selected");
-        }
-
-        // 클릭한 탭에 selected 추가
-        tempSelectTab = tabMenuButton;
-        tabMenuButton.classList.add("selected");
-
-        // 모든 category-group 초기화 후 해당 index만 활성화
-        categoryGroups.forEach((group, i) => {
-            group.classList.toggle("on", i === index);
-        });
-
-        // 해당 탭의 첫번째 카테고리 버튼만 selected
-        const currentGroup = categoryGroups[index];
-        const categoryButtons = currentGroup.querySelectorAll(".tab.qnaSpA");
-
-        // 모든 카테고리 버튼 selected 제거
-        categoryButtons.forEach((btn) => btn.classList.remove("selected"));
-
-        // 첫번째만 selected
-        if (categoryButtons[0]) {
-            categoryButtons[0].classList.add("selected");
-            tempSelectCategory = categoryButtons[0];
-        }
     });
 });
 
@@ -182,14 +148,14 @@ uniLabelTag.addEventListener("click", (e) => {
 // // 체험공고 클릭
 
 // // 체험공고 버튼
-// const ExperienceAnnouncementClick = document.querySelector(
-//     ".icon-recruit.qnaSpB.btn-layer-open",
-// );
+const ExperienceAnnouncementClick = document.querySelector(
+    ".icon-recruit.qnaSpB.btn-layer-open",
+);
 // // 공고 레이어
-// const ExperienceAnnouncementLayer = document.querySelector(".opening-layer");
+const ExperienceAnnouncementLayer = document.querySelector(".opening-layer");
 
 // // 갔다온 체험
-// const handsOnExperience = document.getElementById("recentRecruit");
+const handsOnExperience = document.getElementById("recentRecruit");
 
 // ExperienceAnnouncementClick.addEventListener("click", (e) => {
 //     ExperienceAnnouncementLayer.classList.toggle("open");
@@ -399,6 +365,7 @@ textarea.addEventListener("click", (e) => {
     }
 });
 
+// 이모티콘(로그인)
 const imoticonButton = document.querySelector(
     ".icon-emotion.qnaSpB.btn-layer-open",
 );
@@ -410,4 +377,195 @@ const imoticonToggleOpen = document.querySelector(
 imoticonButton.addEventListener("click", (e) => {
     imoticonButton.classList.toggle("on");
     imoticonToggleOpen.classList.toggle("open");
+});
+
+const imoticonCancelButton = imoticonToggleOpen.querySelector(
+    ".btn-layer-close.qnaSpB",
+);
+
+imoticonCancelButton.addEventListener("click", (e) => {
+    imoticonButton.classList.remove("on");
+    imoticonToggleOpen.classList.remove("open");
+});
+
+// 드롭다운 버튼 (선택 결과 표시)
+const jobSelectResult = document.querySelector(
+    ".btn-select.qnaSpA.devQnaWriteBizJobtypeDropDownButton",
+);
+
+jobApplyButton.addEventListener("click", (e) => {
+    // 선택된 라디오의 부모 li에서 data 속성 가져오기
+    const selectedRadio = document.querySelector(
+        'input[name="Part_Ctgr_Code"]:checked',
+    );
+
+    if (selectedRadio) {
+        const selectedItem = selectedRadio.closest(".devBizJobtypeItem");
+        const jobName = selectedItem.dataset.bizjobtypeName;
+        const jobCode = selectedItem.dataset.bizjobtypeCode;
+
+        // 드롭다운 버튼에 적용
+        jobSelectResult.dataset.bizjobtypeName = jobName;
+        jobSelectResult.dataset.bizjobtypeCode = jobCode;
+        jobSelectResult.textContent = jobName;
+        jobSelectResult.classList.add("on");
+
+        // 레이어 닫기
+        jobCheckDropDown.classList.remove("open");
+        searchDetailButtonResult.classList.remove("open");
+    } else {
+        alert("직무를 선택해주세요");
+    }
+});
+
+const tabMenuButtons = document.querySelectorAll(
+    ".tab-box-wrap > .tab-menu > li.tab",
+);
+const categoryGroups = document.querySelectorAll(
+    ".tab-box-wrap > .category-group",
+);
+
+// 탭 메뉴 (직무/산업) 클릭 이벤트
+tabMenuButtons.forEach((tabMenuButton, index) => {
+    tabMenuButton.addEventListener("click", (e) => {
+        // 모든 탭 selected 제거
+        tabMenuButtons.forEach((btn) => btn.classList.remove("selected"));
+
+        // 클릭한 탭에 selected 추가
+        tabMenuButton.classList.add("selected");
+
+        categoryGroups.forEach((group, i) => {
+            group.classList.toggle("on", i === index);
+
+            if (i === index) {
+                // 모든 카테고리 버튼 selected 제거 후 첫번째만 추가
+                const categoryButtons = group.querySelectorAll(".tab.qnaSpA");
+                categoryButtons.forEach((btn) =>
+                    btn.classList.remove("selected"),
+                );
+                if (categoryButtons[0]) {
+                    categoryButtons[0].classList.add("selected");
+                }
+
+                // 세부 리스트 모두 숨김
+                const contLists = group.querySelectorAll(".cont-list");
+                contLists.forEach((list) => {
+                    list.classList.remove("attached");
+                    list.style.display = "none";
+                });
+
+                // "카테고리를 선택해주세요" 표시
+                const blankBox = group.querySelector(".blank-box-wrap");
+                if (blankBox) blankBox.style.display = "block";
+
+                // 세부 항목 radio 초기화
+                const radios = group.querySelectorAll('input[type="radio"]');
+                radios.forEach((radio) => (radio.checked = false));
+            }
+        });
+    });
+});
+
+// 각 category-group별 이벤트 설정
+categoryGroups.forEach((group) => {
+    const categoryButtons = group.querySelectorAll(".tab.qnaSpA");
+    const contLists = group.querySelectorAll(".cont-list");
+    const blankBox = group.querySelector(".blank-box-wrap");
+
+    let tempSelectRadio = null;
+
+    // 카테고리 버튼 클릭 이벤트
+    categoryButtons.forEach((btn, index) => {
+        btn.addEventListener("click", (e) => {
+            // 모든 카테고리 버튼 selected 제거
+            categoryButtons.forEach((b) => b.classList.remove("selected"));
+
+            // 클릭한 카테고리에 selected 추가
+            btn.classList.add("selected");
+
+            // "카테고리를 선택해주세요" 숨김
+            if (blankBox) blankBox.style.display = "none";
+
+            // 해당 index의 세부 리스트만 표시
+            contLists.forEach((list, i) => {
+                if (i === index) {
+                    list.classList.add("attached");
+                    list.style.display = "block";
+                } else {
+                    list.classList.remove("attached");
+                    list.style.display = "none";
+                }
+            });
+
+            // 세부 항목 radio 초기화
+            tempSelectRadio = null;
+            const radios = group.querySelectorAll('input[type="radio"]');
+            radios.forEach((radio) => (radio.checked = false));
+        });
+    });
+
+    // 세부 항목 radio 클릭 이벤트
+    const radios = group.querySelectorAll('input[type="radio"]');
+    radios.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+            if (tempSelectRadio && tempSelectRadio !== radio) {
+                tempSelectRadio.checked = false;
+            }
+            tempSelectRadio = radio;
+        });
+    });
+});
+
+// 각 category-group별 이벤트 설정
+categoryGroups.forEach((group) => {
+    const categoryButtons = group.querySelectorAll(".tab.qnaSpA");
+    const contLists = group.querySelectorAll(".cont-list");
+    const blankBox = group.querySelector(".blank-box-wrap");
+
+    let tempSelectCategory = null;
+    let tempSelectRadio = null;
+
+    // 카테고리 버튼 클릭 이벤트
+    categoryButtons.forEach((btn, index) => {
+        btn.addEventListener("click", (e) => {
+            // 이전 카테고리 selected 제거
+            if (tempSelectCategory) {
+                tempSelectCategory.classList.remove("selected");
+            }
+
+            // 클릭한 카테고리에 selected 추가
+            tempSelectCategory = btn;
+            btn.classList.add("selected");
+
+            // "카테고리를 선택해주세요" 숨김
+            if (blankBox) blankBox.style.display = "none";
+
+            // 해당 index의 세부 리스트만 표시
+            contLists.forEach((list, i) => {
+                if (i === index) {
+                    list.classList.add("attached");
+                    list.style.display = "block";
+                } else {
+                    list.classList.remove("attached");
+                    list.style.display = "none";
+                }
+            });
+
+            // 세부 항목 radio 초기화
+            tempSelectRadio = null;
+            const radios = group.querySelectorAll('input[type="radio"]');
+            radios.forEach((radio) => (radio.checked = false));
+        });
+    });
+
+    // 세부 항목 radio 클릭 이벤트 (중복 선택 방지)
+    const radios = group.querySelectorAll('input[type="radio"]');
+    radios.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+            if (tempSelectRadio && tempSelectRadio !== radio) {
+                tempSelectRadio.checked = false;
+            }
+            tempSelectRadio = radio;
+        });
+    });
 });
