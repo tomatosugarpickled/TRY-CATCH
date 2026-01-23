@@ -3,13 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>log-write</title>
-        <link rel="stylesheet" href="/static/css/community/header.css" />
-        <link rel="stylesheet" href="/static/css/community/footer.css" />
-        <link rel="stylesheet" href="/static/css/skill-log/log-write.css" />
+        <title>my-log-list</title>
+        <link rel="stylesheet" href="../../static/css/community/header.css" />
+        <link rel="stylesheet" href="../../static/css/community/footer.css" />
+        <link
+            rel="stylesheet"
+            href="../../static/css/skill-log/my-log-list.css"
+        />
     </head>
-    <body>
-        <!-- 헤더 -->
+    <body class="qnaWrapBody" style="">
+        <a name="top"></a>
+
+        <input type="hidden" name="MemId" id="MemId" value="egg3256" />
+        <input type="hidden" name="MemTypeCode" id="MemTypeCode" value="M" />
+
+        <!--// GNB 개편 시작 -->
         <div id="headerWrap" class="gnbTheme1200 devGnbContainer">
             <div id="header" class="season_bg">
                 <!--신입공채 메뉴일경우 클래스 start-sub 추가 -->
@@ -401,7 +409,7 @@
                                                                 >
                                                                     북마크한
                                                                     <a
-                                                                        href="/User/Qstn/AnswerWrite?qstnNo=152527"
+                                                                        href=""
                                                                         target="_blank"
                                                                         onclick=""
                                                                     >
@@ -421,7 +429,7 @@
                                                                     class="buttons"
                                                                 >
                                                                     <a
-                                                                        href="/User/Qstn/AnswerWrite?qstnNo=152527"
+                                                                        href=""
                                                                         class="button"
                                                                         onclick=""
                                                                         >자세히보기</a
@@ -441,7 +449,7 @@
                                                 </div>
                                             </div>
                                             <a
-                                                href="/User/Alarm"
+                                                href=""
                                                 class="button button-footer button-all-view"
                                                 >모두보기</a
                                             >
@@ -609,23 +617,14 @@
                                                     <button
                                                         type="button"
                                                         class="AIbutton-common-agreement"
-                                                        onclick="
-                                                            OpenMissingOptionalPIMAgreeSet()
-                                                        "
+                                                        onclick=""
                                                     >
                                                         동의하고 알림받기
                                                     </button>
                                                     <button
                                                         type="button"
                                                         class="AIbutton-common-close"
-                                                        onclick="
-                                                            $(
-                                                                '.AImodal-popup',
-                                                            ).css(
-                                                                'display',
-                                                                'none',
-                                                            )
-                                                        "
+                                                        onclick=""
                                                     >
                                                         <i
                                                             class="system_system_close"
@@ -675,16 +674,10 @@
                                         <a
                                             href=""
                                             class="btnMyOpen txt-button ico-cp"
-                                            onclick="
-                                                GA_Event(
-                                                    '공통_PC',
-                                                    'gnb',
-                                                    '개인회원 홈',
-                                                )
-                                            "
+                                            onclick=""
                                             ><span class="spGnb"></span
                                             ><span class="user-name"
-                                                >이준수</span
+                                                >김윤찬</span
                                             ><span class="skip">열기</span></a
                                         >
                                         <div class="lyMyArea">
@@ -693,14 +686,8 @@
                                                     <ul>
                                                         <li>
                                                             <a
-                                                                href="https://www.jobkorea.co.kr/User/Mypage"
-                                                                onclick="
-                                                                    GA_Event(
-                                                                        '공통_PC',
-                                                                        'gnb',
-                                                                        '개인회원 홈',
-                                                                    )
-                                                                "
+                                                                href=""
+                                                                onclick=""
                                                                 ><span
                                                                     class="tx"
                                                                     >개인회원
@@ -710,14 +697,8 @@
                                                         </li>
                                                         <li>
                                                             <a
-                                                                href="https://www.jobkorea.co.kr/User/ResumeMng"
-                                                                onclick="
-                                                                    GA_Event(
-                                                                        '공통_PC',
-                                                                        'gnb',
-                                                                        '이력서 관리',
-                                                                    )
-                                                                "
+                                                                href=""
+                                                                onclick=""
                                                                 ><span
                                                                     class="tx"
                                                                     >자기소개서
@@ -727,14 +708,8 @@
                                                         </li>
                                                         <li>
                                                             <a
-                                                                href="https://www.jobkorea.co.kr/User/ApplyMng"
-                                                                onclick="
-                                                                    GA_Event(
-                                                                        '공통_PC',
-                                                                        'gnb',
-                                                                        '입사지원 현황',
-                                                                    )
-                                                                "
+                                                                href=""
+                                                                onclick=""
                                                                 ><span
                                                                     class="tx"
                                                                     >체험지원
@@ -744,14 +719,8 @@
                                                         </li>
                                                         <li>
                                                             <a
-                                                                href="https://www.jobkorea.co.kr/Text_User/User_Pwd.asp"
-                                                                onclick="
-                                                                    GA_Event(
-                                                                        '공통_PC',
-                                                                        'gnb',
-                                                                        '개인정보 수정',
-                                                                    )
-                                                                "
+                                                                href=""
+                                                                onclick=""
                                                                 ><span
                                                                     class="tx"
                                                                     >개인정보
@@ -764,15 +733,9 @@
                                                 <div class="lyRow">
                                                     <div class="btnRowWrap">
                                                         <a
-                                                            href="/Login/Logout.asp"
+                                                            href=""
                                                             class="btnLogOut"
-                                                            onclick="
-                                                                GA_Event(
-                                                                    '공통_PC',
-                                                                    'gnb',
-                                                                    '로그아웃',
-                                                                )
-                                                            "
+                                                            onclick=""
                                                             >로그아웃</a
                                                         >
                                                     </div>
@@ -1035,8 +998,10 @@
         </div>
 
         <div class="jkNavDimm"></div>
-        <!-- 네비게이션 -->
+        <!-- GNB 개편 끝 //-->
+
         <div id="wrap">
+            <!-- // sidebar 신규 추가영역  -->
             <div class="side-navigation">
                 <h2 class="skip">취업톡톡 세부메뉴</h2>
                 <div class="navi-top-area has-tooltip">
@@ -1070,7 +1035,7 @@
                     </div>
                     <!-- 로그인시 프로필 -->
                     <div class="myInfoSec">
-                        <a href="/User/Qstn/MainProfile" class="myInfo">
+                        <a href="" class="myInfo">
                             <span class="proThumb"
                                 ><img
                                     onerror="
@@ -1097,7 +1062,7 @@
                             class="myPoint devMainCouponButton"
                         >
                             <span class="point qnaSpB">0</span
-                            ><span class="btnCoupon qnaSpA">쿠폰교환</span>
+                            ><span class="btnCoupon qnaSpA">별 충전</span>
                         </button>
                     </div>
                 </div>
@@ -1110,7 +1075,7 @@
                         <ul class="sideNavList">
                             <li class="sideNavListItem">
                                 <a
-                                    href="../../templates/skill-log/dashboard.html"
+                                    href=""
                                     >블로그 홈</a
                                 >
                             </li>
@@ -1133,393 +1098,362 @@
                 </div>
             </div>
             <!-- 사이드 네비게이션 끝 -->
-            <!-- 글쓰기 작성 시작 -->
+
+            <input type="hidden" id="devTab" name="devTab" value="5" />
+            <input
+                type="hidden"
+                id="devDiffCheck"
+                name="devDiffCheck"
+                value="0"
+            />
+            <input type="hidden" id="devTarget" name="devTarget" value="0" />
+
             <div id="container">
-                <!-- 쓰기 : qnaWriteWrap -->
-                <div id="content" class="qnaWriteWrap devQnaWriteLayer">
-                    <input type="hidden" id="devGno" name="devGno" value="0" />
-                    <input type="hidden" id="devGiTitle" name="devGiTitle" />
-                    <input type="hidden" id="devCName" name="devCName" />
-                    <input
-                        type="hidden"
-                        id="devLogo"
-                        name="devLogo"
-                        value="//img.jobkorea.co.kr/Images/Logo/200/etc/_200.gif"
-                    />
-                    <input
-                        type="hidden"
-                        id="devWTypeCode"
-                        name="devWTypeCode"
-                        value="1"
-                    />
+                <!-- 메인 : qnaMainWrap,  인기질문 : popularQuestion 추가 -->
+                <div id="content" class="qnaPopularWrap">
                     <div class="top-title-wrap">
-                        <h2 class="title">블로그 작성</h2>
+                        <h2 class="title skip">
+                            <span class="skip">프로필 홈</span>
+                        </h2>
                     </div>
-                    <div class="lyWriteBoard">
-                        <!-- 글쓰기 시작(제목, 내용) -->
-                        <div class="writeBoxWrap">
-                            <form>
-                                <fieldset>
-                                    <legend>제목 등록하기</legend>
-                                    <div class="jkTxInput">
-                                        <p class="inpWrap">
-                                            <input
-                                                type="text"
-                                                class="jkSchInp devQnaWriteTitle"
-                                                placeholder="블로그 제목을 입력해주세요."
-                                            />
-                                        </p>
-                                    </div>
-                                    <!-- 체험공고, 링크, 사진 첨부 -->
-                                    <div class="editor-util">
-                                        <ul>
-                                            <li class="editor-util-item">
-                                                <button
-                                                    type="button"
-                                                    class="icon-recruit qnaSpB btn-layer-open"
+                    <!-- [Dev] 다른 회원 프로필일 경우 myInfoSec 에 클래스 other-member 추가 -->
+                    <div class="lyProfileHome">
+                        <div class="myInfoSec">
+                            <!-- [Dev] 프로필 랜덤 이미지 파일명 : random_1 ~ random_20, 이미지 없음 : random_default / 프로필 수정 페이지로 연결 -->
+                            <div class="profile-info">
+                                <a
+                                    href=""
+                                    class="proThumb qnaSpA"
+                                >
+                                    <img
+                                        onerror="
+                                            this.src =
+                                                'https://cdn-assets.jobkorea.co.kr/images/jk-pc/m/ver_2/user/qna/profile_thumb/random_default.jpg'
+                                        "
+                                        src="https://cdn-assets.jobkorea.co.kr/images/jk-pc/m/ver_2/user/qna/profile_thumb/random_6.jpg"
+                                        alt="프로필 이미지"
+                                    />
+                                </a>
+                                <dl class="infoBx">
+                                    <dt>
+                                        <span class="nickname"
+                                            >mentor0241539</span
+                                        >
+                                        <div class="has-tooltip">
+                                            <button
+                                                type="button"
+                                                class="select-tooltip"
+                                            >
+                                                <span class="lvIcon">Lv.1</span>
+
+                                                <span class="ico-tooltip qnaSpB"
+                                                    >?</span
                                                 >
-                                                    체험공고
-                                                </button>
-                                                <div
-                                                    class="layer-box-wrap opening-layer"
-                                                >
-                                                    <p class="layer-header">
-                                                        최근 체험 기록
-                                                    </p>
-                                                    <div
-                                                        class="jkSchInput keywordSearch keywordSearchRecruit"
+                                            </button>
+                                            <!-- 나의 멘토 레벨 레이어 -->
+                                            <div
+                                                class="level_modal_wrap tooltip-layer qnaSpB"
+                                            >
+                                                <div class="modal_content">
+                                                    <strong class="modal_title"
+                                                        >나의 멘토 레벨
+                                                        <span
+                                                            >Lv.1</span
+                                                        ></strong
                                                     >
-                                                        <p class="inpWrap">
-                                                            <input
-                                                                type="text"
-                                                                class="schInp"
-                                                                id="AJAX_TS_Search"
-                                                                maxlength=""
-                                                                placeholder="체험 검색"
-                                                                title="학교명 입력"
-                                                            />
-                                                            <button
-                                                                type="button"
-                                                                class="btnSch qnaSpB devSearchRecruit"
-                                                            >
-                                                                <span
-                                                                    class="skip"
-                                                                    >검색</span
-                                                                >
-                                                            </button>
-                                                        </p>
-                                                        <div
-                                                            class="searchLayer thin"
+                                                    <p class="text_next_level">
+                                                        답변 0
+                                                        <span
+                                                            >다음 레벨까지 3건의
+                                                            답변을
+                                                            작성하세요.</span
                                                         >
-                                                            <ul
-                                                                class="keyword-search-area"
-                                                            ></ul>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="layer-cont"
-                                                        id="recentRecruit"
-                                                        style="display: none"
-                                                    >
-                                                        <input
-                                                            type="hidden"
-                                                            id="RecentRecruitTotalCnt"
-                                                            value="1"
-                                                        />
+                                                    </p>
+
+                                                    <div class="level_bar">
                                                         <div
-                                                            class="search-title-wrap"
+                                                            class="bar_item"
+                                                            style="width: 0%"
                                                         ></div>
-                                                        <div
-                                                            class="keyword-search-area"
+                                                        <span class="tx_min"
+                                                            >0건</span
                                                         >
-                                                            <div
-                                                                class="keyword-search-item"
-                                                            >
-                                                                <div
-                                                                    class="checkboxCommWrap"
-                                                                >
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        class="skip"
-                                                                        id="recent-item-check_48363747"
-                                                                        data-gno="48363747"
-                                                                        data-cname="한국폴리텍대학분당융합기술교육원"
-                                                                        data-title="2026학년도 하이테크과정 일일체험 (품질관리(바이오ㆍ이화학)전문가, IT개발자(AIㆍSW)"
-                                                                        data-logo=""
-                                                                        style="
-                                                                            display: none;
-                                                                        "
-                                                                    />
-                                                                    <label
-                                                                        class="qnaSpB"
-                                                                        for="recent-item-check_48363747"
-                                                                    ></label>
-                                                                </div>
-                                                                <a
-                                                                    href=""
-                                                                    target="_blank"
-                                                                >
-                                                                    <p
-                                                                        class="companyName"
-                                                                    >
-                                                                        <span
-                                                                            class="text_on"
-                                                                            >한국폴리텍대학분당융합기술교육원</span
-                                                                        >
-                                                                        2026학년도
-                                                                        하이테크과정
-                                                                        일일체험
-                                                                        (품질관리(바이오ㆍ이화학)전문가,
-                                                                        IT개발자(AIㆍSW)
-                                                                    </p>
-                                                                </a>
-                                                            </div>
-                                                            <div
-                                                                class="keyword-search-item"
-                                                            >
-                                                                <div
-                                                                    class="checkboxCommWrap"
-                                                                >
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        class="skip"
-                                                                        id="recent-item-check_48389550"
-                                                                        data-gno="48389550"
-                                                                        data-cname="토스페이먼츠"
-                                                                        data-title="[중소기업] 2026년 1분기 토스페이먼츠 직무 체험 "
-                                                                        data-logo=""
-                                                                        style="
-                                                                            display: none;
-                                                                        "
-                                                                    />
-                                                                    <label
-                                                                        class="qnaSpB"
-                                                                        for="recent-item-check_48389550"
-                                                                    ></label>
-                                                                </div>
-                                                                <a
-                                                                    href=""
-                                                                    target="_blank"
-                                                                >
-                                                                    <p
-                                                                        class="companyName"
-                                                                    >
-                                                                        <span
-                                                                            class="text_on"
-                                                                            >토스페이먼츠</span
-                                                                        >
-                                                                        [중소기업]
-                                                                        2026년
-                                                                        1분기
-                                                                        토스페이먼츠
-                                                                        직무
-                                                                        체험
-                                                                    </p>
-                                                                </a>
-                                                            </div>
-                                                            <button
-                                                                type="button"
-                                                                class="search-more-button qnaSpA moreRecentRecruitList"
-                                                                style="
-                                                                    display: none;
-                                                                "
-                                                            >
-                                                                더보기
-                                                            </button>
-                                                        </div>
-                                                        <div
-                                                            class="layer-button"
+                                                        <span class="tx_max"
+                                                            >3건</span
                                                         >
-                                                            <button
-                                                                type="button"
-                                                                class="apply attachRecruitBtn"
-                                                            >
-                                                                첨부하기
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="layer-cont"
-                                                        id="searchRecruit"
-                                                        style="display: none"
-                                                    ></div>
-                                                    <button
-                                                        type="button"
-                                                        class="btn-layer-close qnaSpB"
-                                                    >
-                                                        <span class="blind"
-                                                            >닫기</span
-                                                        >
-                                                    </button>
-                                                </div>
-                                            </li>
-                                            <li class="editor-util-item">
-                                                <button
-                                                    type="button"
-                                                    class="icon-link qnaSpB btn-layer-open"
-                                                >
-                                                    링크
-                                                </button>
-                                                <div
-                                                    class="layer-box-wrap link-layer"
-                                                >
-                                                    <p class="layer-header">
-                                                        링크첨부
-                                                    </p>
-                                                    <div
-                                                        class="jkSchInput keywordSearch keywordSearchLink"
-                                                    >
-                                                        <p class="inpWrap">
-                                                            <input
-                                                                type="text"
-                                                                class="schInp"
-                                                                maxlength=""
-                                                                placeholder="URL을 입력하세요"
-                                                                title="학교명 입력"
-                                                            />
-                                                            <button
-                                                                type="button"
-                                                                class="btnSch qnaSpB devSearchLink"
-                                                            >
-                                                                <span
-                                                                    class="skip"
-                                                                    >검색</span
-                                                                >
-                                                            </button>
-                                                        </p>
-                                                    </div>
-                                                    <div
-                                                        class="loading"
-                                                        style="display: none"
-                                                    >
-                                                        로딩중
-                                                    </div>
-                                                    <div
-                                                        class="ApiOpenGraphResult"
-                                                    ></div>
-                                                    <div class="layer-button">
-                                                        <button
-                                                            type="button"
-                                                            class="apply attachLinkBtn"
-                                                        >
-                                                            첨부하기
-                                                        </button>
                                                     </div>
 
+                                                    <div class="my_activity">
+                                                        <dl>
+                                                            <dt>질문수</dt>
+                                                            <dd>1</dd>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt>답변수</dt>
+                                                            <dd>
+                                                                0
+                                                                <span
+                                                                    class="tooltip_wrap"
+                                                                    ><span
+                                                                        class="activity_tooltip"
+                                                                        >채택
+                                                                        0</span
+                                                                    ></span
+                                                                >
+                                                            </dd>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt>댓글수</dt>
+                                                            <dd>2</dd>
+                                                        </dl>
+                                                    </div>
                                                     <button
                                                         type="button"
-                                                        class="btn-layer-close qnaSpB"
+                                                        class="btn-tooltip-close qnaSpB"
                                                     >
-                                                        <span class="blind"
+                                                        <span class="skip"
                                                             >닫기</span
                                                         >
                                                     </button>
                                                 </div>
-                                            </li>
-                                            <li class="editor-util-item">
+                                            </div>
+                                            <!-- // 나의 멘토 레벨 레이어 -->
+                                        </div>
+                                    </dt>
+                                </dl>
+                                <a href="javascript:;" class="myPoint">
+                                    <span class="point qnaSpB">0</span
+                                    ><span
+                                        class="btnCoupon qnaSpA devMainCouponButton"
+                                        >별 충전</span
+                                    >
+                                </a>
+                            </div>
+                            <!--//profile-info-->
+                            <div class="profile-intro">
+                                <div class="profile-intro-summary">
+                                    <a href=""
+                                        >자기소개를 입력해보세요 &gt;
+                                    </a>
+                                </div>
+                                <ul class="profile-intro-link"></ul>
+                            </div>
+                            <!--//profile-intro-->
+                        </div>
+                        <!-- // myInfoSec -->
+
+                        <div class="lyListBoard">
+                            <div class="headerWrap">
+                                <h3 class="numBx">
+                                    <span>블로그 <span class="num">1</span>건</span>
+                                </h3>
+                                <div class="sort-box">
+                                    <div
+                                        class="select-box qnaSpB"
+                                        style="display: inline-block"
+                                    >
+                                        <select class="devSortList">
+                                            <option value="1" selected="">
+                                                최신순
+                                            </option>
+                                            <option value="2">인기순</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="listWrap 1">
+                                <ul>
+                                    <!-- 리스트 영역 -->
+                                    <li>
+                                        <div class="topArea">
+                                            <div
+                                                class="labelSwiper swiper-container swiper-container-horizontal"
+                                            >
+                                                <div
+                                                    class="labelBx swiper-wrapper"
+                                                >
+                                                    <!-- 링크 연결 : 클릭 시 그 태그 검색창으로 이동  -->
+                                                    <a
+                                                        href=""
+                                                        class="label swiper-slide swiper-slide-active"
+                                                        target="_blank"
+                                                        >#AI</a
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- [Dev] 방문한 링크 : visited 클래스 추가 -->
+                                        <div class="contArea">
+                                            <!-- [Dev] 이미지 포함 컨텐츠 : image 클래스 추가 -->
+                                            <a
+                                                href=""
+                                                class="post-type"
+                                            >
+                                                <div class="post-title">
+                                                    <span class="lineOne"
+                                                        >테스트</span
+                                                    >
+                                                </div>
+                                                <div class="post-summary">
+                                                    <span class="lineTwo"
+                                                        >테스트01
+                                                    </span>
+                                                </div>
+                                            </a>
+
+                                            <div class="post-cell-box">
+                                                <span class="cell"
+                                                    ><i
+                                                        class="qnaSpB icon-view-eye"
+                                                        >조회수</i
+                                                    >167</span
+                                                >
                                                 <button
                                                     type="button"
-                                                    class="icon-photo qnaSpB btn-layer-open"
+                                                    class="cell devQstnListLike"
+                                                    data-likecnt="0"
+                                                    data-qstnno="152856"
                                                 >
-                                                    사진
+                                                    <i class="qnaSpB icon-like"
+                                                        >좋아요</i
+                                                    >
+                                                    <em>0</em>
                                                 </button>
-                                                <input
-                                                    type="file"
-                                                    id="photoInput"
-                                                    accept="image/*"
-                                                    style="display: none"
-                                                />
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <input
-                                        type="hidden"
-                                        id="dev_ApiOpenGraph_default_img"
-                                        data-value="https://cdn-assets.jobkorea.co.kr/images/jk-pc/user/qna/talktalk_none_img.jpg"
-                                    />
-                                    <div class="uiPlaceholder">
-                                        <span class="ph" style="display: none"
-                                            >내용을 입력해주세요.<br />*휴대폰
-                                            번호, 메일 주소, 카카오톡 ID 등
-                                            개인정보가 포함된 내용은 비노출
-                                            처리될 수 있습니다</span
-                                        >
-                                        <div class="type-error-alert qnaSpB">
-                                            허용되지 않는 이미지 형식이 있어
-                                            제외됩니다.
+                                                <!-- [Dev] 신규 답변의 경우 icnNew 클래스 추가 -->
+                                                <span class="cell">
+                                                    <i
+                                                        class="qnaSpB icon-answer-bubble"
+                                                        >답변</i
+                                                    ><span class="num">2</span>
+                                                </span>
+                                                <span class="cell"
+                                                    >21시간 전 작성</span
+                                                >
+                                            </div>
+                                            <!--//post-cell-box-->
+                                            <!-- [Dev] 북마크 툴팁 show - class tooltip-open 추가 -->
+                                            <div class="post-util has-tooltip">
+                                                <div class="post-util-item">
+                                                    <!-- [Dev] 북마크 - class on 추가/제거 -->
+                                                    <button
+                                                        type="button"
+                                                        class="devQnaDetailBookmark btnBookmark qnaSpB"
+                                                        data-qstn-no="152856"
+                                                    >
+                                                        북마크
+                                                    </button>
+                                                    <div
+                                                        class="book-mark-layer tooltip-layer qnaSpA"
+                                                    >
+                                                        <p class="txt">
+                                                            내 프로필 &gt;
+                                                            북마크 에
+                                                            추가되었습니다
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--//post-util has-tooltip-->
                                         </div>
-                                        <textarea
-                                            id="editorQnaText"
-                                            style="width: 100%; display: none"
-                                            class="devQnaWriteCntnt"
-                                            title="내용 입력"
-                                        >
-                                        &lt;p&gt;&lt;/p&gt;
-                                    </textarea
-                                        >
-                                        <!-- 실질적인 내용 작성하는 곳 -->
-                                        <div>
-                                            <div class="addFileAndLink"></div>
-                                            <textarea
-                                                id="editorQnaText"
-                                                class="devQnaWriteCntnt custom-editor"
-                                                placeholder="내용을 입력해주세요.
-    *휴대폰 번호, 메일 주소, 카카오톡 ID 등 개인정보가 포함된 내용은 비노출 처리될 수 있습니다"
-                                            ></textarea>
-                                        </div>
-                                    </div>
-                                    <!-- 태그 입력란 -->
-                                    <div class="tag-input">
-                                        <input
-                                            type="text"
-                                            id="devTags"
-                                            placeholder="태그입력 (#없이 입력후 Enter를 눌러주세요. 태그를 클릭하면 삭제됩니다.)"
-                                            value=""
-                                        />
-                                    </div>
-                                    <!-- 질문하기, 취소 버튼 -->
-                                    <div class="btnCommWrap">
-                                        <button
-                                            type="button"
-                                            class="btnQuestion devQnaWriteButton"
-                                        >
-                                            등록하기
-                                        </button>
-                                        <button
-                                            type="button"
-                                            class="btnCancel bg_white devQnaWriteCancelButton"
-                                        >
-                                            취소
-                                        </button>
-                                    </div>
-                                </fieldset>
-                            </form>
+                                        <!--//contArea-->
+                                    </li>
+                                    <!-- 리스트 영역 -->
+                                </ul>
+
+                                <!--?xml version="1.0" encoding="utf-16"?-->
+                                <div
+                                    class="tplPagination newVer"
+                                    role="navigation"
+                                >
+                                    <ul>
+                                        <li>
+                                            <span class="now">1</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <!-- // writeBoxWrap -->
-                        <ul class="txInfoWrap">
-                            <li>
-                                개인정보를 공유 및 요청하거나, 명예 훼손, 무단
-                                광고, 불법 정보 유포 시 이에 대한 민형사상
-                                책임은 작성자에게 있습니다.
-                            </li>
-                            <li>
-                                개인정보가 포함되거나 부적절한 질문은 비노출
-                                또는 서비스 이용 정지 사유가 될 수 있습니다.
-                            </li>
-                            <li>인기 블로그로 추천될 수 있습니다.</li>
-                            <li>
-                                본 사이트와 관련없는 내용을 올릴 시 글이 삭제 될
-                                수 있습니다.
-                            </li>
-                        </ul>
-                        <!-- // txInfoWrap -->
+                        <!-- // lyListBoard -->
                     </div>
-                    <!-- // lyWriteBoard -->
                 </div>
                 <!-- // content -->
             </div>
+            <!-- // container -->
         </div>
-        <!-- footer -->
+
+        <!-- 포인트, 상품 레이어 -->
+
+        <div
+            class="mtuLyWrap lyMyPointWrap"
+            aria-hidden="true"
+            style="display: none"
+        >
+            <div class="dimmed" style="display: block"></div>
+            <div class="mtuPopup lyMyPoint">
+                <h1 class="lyHd">사용가능 포인트 <em id="devEmPoint"></em></h1>
+
+                <div class="info-area">
+                    <p class="info-item">
+                        보유 중인 포인트를 쿠폰으로 교환할 수 있습니다. (월 최대
+                        5만 포인트 교환 가능)
+                    </p>
+                    <p class="info-item">
+                        포인트 유효기간은 적립일로부터 1년입니다. (포인트 내역은
+                        최근 1년만 확인 가능)
+                    </p>
+                    <p class="info-item">
+                        포인트 유효기간 만료 시 자동 소멸됩니다.
+                    </p>
+                    <p class="info-item">
+                        잡코리아∙알바몬 통합탈퇴, 취업톡톡 이용정지 시 모든
+                        포인트가 자동 소멸됩니다.
+                    </p>
+                </div>
+                <div class="lyCnt devTplTabBx">
+                    <div class="tplTabBx qnaCmTab">
+                        <ul class="tplTab clear devInfoArea">
+                            <li class="devCouponTab on">
+                                <button type="button">
+                                    <span>별 충전</span>
+                                </button>
+                            </li>
+                            <li class="devPointTab">
+                                <button type="button">
+                                    <span>포인트 내역</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tplTabCnt">
+                        <div
+                            class="tabCnt myCoupon devCouponArea"
+                            style="display: block"
+                        >
+                            <div class="listWrap" style="display: none">
+                                <ul id="devCouponList" class="list"></ul>
+                            </div>
+                            <div class="noResultWrap devNoListWrap">
+                                <p class="qnaSpB noResultInfo">
+                                    상품을 불러올 수 없습니다.<br />
+                                    고객센터(1588-9350)에 문의해 주세요.
+                                    <span class="num">문제번호 : 4012</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    type="button"
+                    class="butClose mtuSpImg devLyBtnClose devPointLayerCloseBtn"
+                >
+                    <span class="blind">나의 포인트 레이어 닫기</span>
+                </button>
+            </div>
+        </div>
+
+        <input id="hdnPhone" type="hidden" name="hdnPhone" value="" />
+        <input id="hdnGoodsID" type="hidden" name="hdnGoodsID" value="" />
         <div id="footer" class="footer footer--medium">
             <div class="footer__wrap">
                 <h2 class="skip">잡코리아 기타 정보</h2>
@@ -1621,13 +1555,13 @@
                     <h3 class="blind">공지사항</h3>
                     <dl class="footer__notice-wrap clear">
                         <dt class="footer__notice-title">
-                            <a href="https://www.jobkorea.co.kr/help/notice"
+                            <a href=""
                                 >공지사항</a
                             >
                         </dt>
                         <dd class="footer__notice-text">
                             <a
-                                href="https://www.jobkorea.co.kr/help/notice/view?no=15019"
+                                href=""
                                 ><div class="ellipsis">
                                     [무료] try-catchㅣAI로 채용을 새롭게
                                 </div>
@@ -1642,7 +1576,7 @@
                     <ul>
                         <li>
                             <a
-                                href="http://company.jobkorea.co.kr/"
+                                href=""
                                 target="_blank"
                                 >회사소개</a
                             >
@@ -1650,14 +1584,14 @@
 
                         <li>
                             <a
-                                href="https://www.jobkorea.co.kr/service_jk/provision/provision_gg.asp"
+                                href=""
                                 target="_blank"
                                 >이용약관</a
                             >
                         </li>
                         <li>
                             <a
-                                href="https://www.jobkorea.co.kr/service_jk/privacy.asp"
+                                href=""
                                 target="_blank"
                                 ><strong>개인정보처리방침</strong></a
                             >
@@ -1665,7 +1599,7 @@
 
                         <li>
                             <a
-                                href="https://www.jobkorea.co.kr/help/faq/user"
+                                href=""
                                 target="_blank"
                                 >고객센터</a
                             >
@@ -1697,7 +1631,7 @@
                         <dt class="footer__help-title"><span>Email</span></dt>
                         <dd class="footer__help-text">
                             <a
-                                href="mailto:helpdesk@jobkorea.co.kr"
+                                href=""
                                 class="footer__help-link"
                                 >test@.com</a
                             >
@@ -1705,7 +1639,7 @@
                     </dl>
                     <dl class="footer__help-wrap footer__help-wrap--consult">
                         <a
-                            href="https://talk.naver.com/ct/wcb8l5"
+                            href=""
                             target="_blank"
                             title="새창"
                             class="footer__help-link"
@@ -1717,7 +1651,7 @@
                     <ul class="footer__sns">
                         <li class="footer__sns-item">
                             <a
-                                href="https://blog.naver.com/jobkorea1"
+                                href=""
                                 target="_blank"
                                 title="블로그"
                                 class="footer__sns-item--blog"
@@ -1726,7 +1660,7 @@
                         </li>
                         <li class="footer__sns-item">
                             <a
-                                href="https://m.post.naver.com/my.nhn?memberNo=9028903"
+                                href=""
                                 target="_blank"
                                 title="포스트"
                                 class="footer__sns-item--post"
@@ -1735,7 +1669,7 @@
                         </li>
                         <li class="footer__sns-item">
                             <a
-                                href="https://www.facebook.com/jobkorea"
+                                href=""
                                 target="_blank"
                                 title="페이스북"
                                 class="footer__sns-item--facebook"
@@ -1744,7 +1678,7 @@
                         </li>
                         <li class="footer__sns-item">
                             <a
-                                href="https://www.instagram.com/jobkorea_albamon/"
+                                href=""
                                 target="_blank"
                                 title="인스타그램"
                                 class="footer__sns-item--instagram"
@@ -1753,7 +1687,7 @@
                         </li>
                         <li class="footer__sns-item">
                             <a
-                                href="https://www.youtube.com/channel/UCOrdY3p46GJh_CYacfwYieg"
+                                href=""
                                 target="_blank"
                                 title="유튜브"
                                 class="footer__sns-item--youtube"
@@ -1767,7 +1701,7 @@
                     ©
                     <strong
                         ><a
-                            href="http://company.jobkorea.co.kr/"
+                            href=""
                             target="_blank"
                             >TRY-CATCH</a
                         ></strong
@@ -1777,6 +1711,6 @@
             </div>
         </div>
     </body>
-    <script src="/static/js/community/header-event.js"></script>
-    <script src="../../static/js/skill-log/log-write.js"></script>
+    <script src="../../static/js/community/header-event.js"></script>
+    <script src="../../static/js/skill-log/my-log-list.js"></script>
 </html>

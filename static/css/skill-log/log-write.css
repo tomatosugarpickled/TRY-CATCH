@@ -1940,3 +1940,32 @@ h1, h2, h3, h4, h5, h6 {
 .editor-util-item > button.on {
     color: hsl(154.36deg 100% 21.57%);
 }
+
+.tooltip-open .tooltip-layer {
+    display: block;
+}
+
+.create-menu-item::before {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 15px;
+    top: 17px;
+}
+
+.tooltip-layer:before {
+    position: absolute;
+    left: 20px;
+    top: -6px;
+    width: 9px;
+    height: 6px;
+    background-position: -278px 0;
+}
+
+.create-menu-item.qna::before {
+    background-position: -216px -408px;
+}
+
+.create-menu-item.carrier::before {
+    background-position: -216px -431px;
+}
