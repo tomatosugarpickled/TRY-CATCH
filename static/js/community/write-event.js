@@ -95,24 +95,6 @@ jobToggleSelected.forEach((jobToggleSelected) => {
     });
 });
 
-// 카테고리 버튼 클릭 이벤트 (각 그룹별로)
-categoryGroups.forEach((group) => {
-    const categoryButtons = group.querySelectorAll(".tab.qnaSpA");
-
-    categoryButtons.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            // 이전 카테고리 selected 제거
-            if (tempSelectCategory) {
-                tempSelectCategory.classList.remove("selected");
-            }
-
-            // 클릭한 카테고리에 selected 추가
-            tempSelectCategory = btn;
-            btn.classList.add("selected");
-        });
-    });
-});
-
 jobToggleSelected.forEach;
 // 동문선배(로그인)
 const thirdCheckButton = document.getElementById("lb_targetCheck1");
@@ -462,6 +444,24 @@ tabMenuButtons.forEach((tabMenuButton, index) => {
                 const radios = group.querySelectorAll('input[type="radio"]');
                 radios.forEach((radio) => (radio.checked = false));
             }
+        });
+    });
+});
+
+// 카테고리 버튼 클릭 이벤트 (각 그룹별로)
+categoryGroups.forEach((group) => {
+    const categoryButtons = group.querySelectorAll(".tab.qnaSpA");
+
+    categoryButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            // 이전 카테고리 selected 제거
+            if (tempSelectCategory) {
+                tempSelectCategory.classList.remove("selected");
+            }
+
+            // 클릭한 카테고리에 selected 추가
+            tempSelectCategory = btn;
+            btn.classList.add("selected");
         });
     });
 });
