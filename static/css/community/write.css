@@ -246,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 17px;
     background-position: -140px -90px;
 }
-.qnaSpB:before, .qnaSpA:after, .qnaSpM:before, .qnaSpM:after {
+.qnaSpB:before, .qnaSpA:after, .qnaSpM:before, .qnaSpM:after{
     content: "";
     display: inline-block;
     background-image: url(/static/images/sp_qna_recolor_star20_fixed.png);
@@ -266,6 +266,10 @@ h1, h2, h3, h4, h5, h6 {
     background: #fff;
     border: 1px solid #565d79;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip-open .tooltip-layer {
+    display: block;
 }
 
 .create-menu-wrap {
@@ -1166,6 +1170,10 @@ h1, h2, h3, h4, h5, h6 {
     outline: 0;
 }
 
+.selectListArea .layer-box-wrap.corporation .keywordSearch.focus .inpWrap .schInp {
+    border-color: #333;
+}
+
 .keywordSearch .btnSch {
     position: absolute;
     right: 10px;
@@ -1210,6 +1218,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #fff;
     box-sizing: border-box;
     border: 1px solid #555b76;
+}
+
+.selectListArea .layer-box-wrap.corporation .keywordSearch.focus .searchLayer {
+    display: block;
 }
 
 .selectListArea .layer-box-wrap.corporation .keywordSearch .searchLayer .btn-more {
@@ -1705,6 +1717,15 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%);
 }
 
+.radioCommWrap input[type=radio] + label:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-position: -195px -90px;
+    vertical-align: middle;
+}
+
 .radioCommWrap input[type=radio]:checked + label:before {
     background-position: -195px -113px;
 }
@@ -2070,4 +2091,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .editor-util .icon-link.on::before {
     background-position: -25px -459px;
+}
+
+
+.attach-wrap {
+    position: relative;
+    text-align: center;
+}
+
+.attach-box.type-image img{
+    max-width: 100%;
+}
+
+.selectListArea .layer-box-wrap .listWrap li span.txt_info {
+    margin-left: 5px;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #999;
+}
+
+.navi-top-area.has-tooltip.tooltip-open .tooltip-layer {
+  display: block;
+}
+
+
+.create-menu-item::before {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 15px;
+    top: 17px;
+}
+
+.create-menu-item.qna::before {
+    background-position: -216px -408px;
+}
+
+.create-menu-item.carrier::before {
+    background-position: -216px -431px;
 }
