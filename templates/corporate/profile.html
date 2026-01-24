@@ -85,16 +85,24 @@
                                                 </dl>
                                             </div>
 
-                                            <!-- javascript: 로고 업로드 전 -->
                                             <div class="tbCell tbLogo">
                                                 <!-- 파일 업로드 전 -->
-                                                <!-- <button type="button" class="infoBtnB infoBtnUp" id="devLogoUp"><span>로고업로드</span></button> -->
+                                                <button type="button" class="infoBtnB infoBtnUp" id="devLogoUp"><span>로고업로드</span></button>
                                                 <!-- javascript: 파일 업로드 후 버튼 삭제하고 새로운 버튼 추가(innerHTML) -->
-                                                <p class="logo"></p>
-                                                <p class="btn"></p>
+
+                                                <!-- // -->
+                                                <!-- <p class="logo">
+                                                    <img src="">
+                                                </p>
+                                                <p class="btn">
+                                                    <button type="button" class="infoBtn infoBtnDel" id="devLogoDel"></button>
+                                                    <button type="button" class="infoBtn infoBtnMod" id="devLogoModify"></button>
+                                                </p> -->
+                                                <!-- //javascript: 동적으로 생성 -->
 
                                                 <div class="logoUploadWrap">
                                                     <div id="frmLogo">
+                                                        <!-- 로고 업로드 -->
                                                         <div class="popRecWrap popLogoUpload">
                                                             <div class="popHd">
                                                                 <h1>로고 업로드</h1>
@@ -124,8 +132,26 @@
                                                             </div>
                                                             <button type="button" class="mtcBtn mtcBtnPopClose" id="devCloseLayer"></button>
                                                         </div>
+
+                                                        <!-- 로고 삭제 -->
+                                                        <div class="popRecWrap popLogoDel">
+                                                            <div class="popHd">
+                                                                <h1>로고 업로드</h1>
+                                                            </div>
+                                                            <div class="popCont">
+                                                                <p class="ntcTx">등록된 로고를 삭제하시겠습니까?</p>
+                                                                <p class="popFunc">
+                                                                    <button type="button" class="mtcBtnBg" id="devDeleteLogo">
+                                                                        <span>확인</span>
+                                                                    </button>
+                                                                </p>
+                                                            </div>
+                                                            <button type="button" class="mtcBtn mtcBtnPopClose" id="devCloseDelLayer"></button>
+                                                        </div>
                                                     </div>
                                                 </div>
+
+                                                
                                             </div>
                                             <!-- javascript: 로고 업로드 버튼 클릭 시, on 클래스 추가(모달) -->
                                         </div>
