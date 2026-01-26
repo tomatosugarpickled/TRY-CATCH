@@ -183,3 +183,50 @@ verificationCodeCheck.addEventListener("click", (e) => {
         }, 1500);
     }
 });
+
+// 체크박스 (input 요소에 이벤트 걸기)
+const inputChkAll = document.getElementById("lb_chk_all");
+const inputChkAge = document.getElementById("lb_chk_age");
+const inputChkPrivacy = document.getElementById("lb_chk_privacyOptional");
+const inputChkAdinfo = document.getElementById("lb_chk_adinfo");
+
+const chkAll = document.querySelector(".chk_all");
+const chkAge = document.querySelector(".chk_age");
+const chkPrivacyOptional = document.querySelector(".chk_privacyOptional");
+const chkAdinfo = document.querySelector(".chk_adinfo");
+
+const checkBoxInputs = [inputChkAge, inputChkPrivacy, inputChkAdinfo];
+const checkBoxLabels = [chkAge, chkPrivacyOptional, chkAdinfo];
+
+// 전체 선택
+inputChkAll.addEventListener("change", () => {
+    const isChecked = inputChkAll.checked;
+
+    chkAll.classList.toggle("on", isChecked);
+
+    checkBoxInputs.forEach((input, idx) => {
+        input.checked = isChecked;
+        checkBoxLabels[idx].classList.toggle("on", isChecked);
+    });
+});
+
+// 개별 선택
+checkBoxInputs.forEach((input, idx) => {
+    input.addEventListener("change", () => {
+        checkBoxLabels[idx].classList.toggle("on", input.checked);
+
+        const allChecked = checkBoxInputs.every((cb) => cb.checked);
+
+        inputChkAll.checked = allChecked;
+        chkAll.classList.toggle("on", allChecked);
+    });
+});
+
+// 내용보기 클릭
+const mbrBtnPolicy = document.querySelectorAll(".mbrBtnPolicy");
+
+mbrBtnPolicy.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        e.target.classList.toggle("on");
+    });
+});
