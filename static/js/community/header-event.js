@@ -24,8 +24,6 @@ const headerFooterActive = document.querySelector(".notification-item");
 const headerFooterDetailButton = document.querySelector(
     ".notificaiton-footer .buttons a",
 );
-console.log(headerFooterActive);
-console.log(headerFooterDetailButton);
 
 // ✅ 수정: mouseenter, mouseleave
 headerFooterDetailButton.addEventListener("mouseenter", (e) => {
@@ -139,7 +137,8 @@ autoCompleteOffBtn.addEventListener("click", (e) => {
     if (isConfirmed) {
         searchToolDiv.classList.remove("autoSearchShow");
         searchToolDiv.classList.add("autoSearchDisabled");
-        searchBox.classList.remove("searchOpen"); // 추가
+        searchToolDiv.classList.add("autoSearchDisabledClose"); // ← 이 줄 추가!
+        searchBox.classList.remove("searchOpen");
     }
 });
 
@@ -176,6 +175,7 @@ autoCompleteOnBtn.addEventListener("click", (e) => {
 const closeBtn = document.getElementById("devAcInfoClose2");
 closeBtn.addEventListener("click", (e) => {
     searchToolDiv.classList.remove("autoSearchShow");
+    searchBox.classList.remove("searchOpen"); // ← 이 줄 추가!
 });
 
 // 닫기 버튼 (자동완성 꺼진 상태에서)
