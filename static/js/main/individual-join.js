@@ -296,3 +296,17 @@ mbrBtnPolicies.forEach((btn) => {
         }
     });
 });
+
+// 성별 체크시 문자 제거
+const boy = document.getElementById("boy");
+const girl = document.getElementById("girl");
+const noticeMsgGender = document.getElementById("notice_msg_gender");
+const gender = [boy, girl];
+
+gender.forEach((gender) => {
+    gender.addEventListener("click", (e) => {
+        if (boy.checked || girl.checked) {
+            noticeMsgGender.style.display = "none";
+        }
+    });
+});
