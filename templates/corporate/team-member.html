@@ -76,7 +76,12 @@
                                 <p>초대된 팀원에 한해 관리 권한이 부여됩니다.</p>
                             </li>
                         </ul>
-                        <button type="button" class="memberDelButton" id="teamMemberDelBtn"><span>팀원 초대</span></button>
+                        <div>
+                            <div class="desc_hd">
+                                
+                            </div>
+                            <button type="button" class="invitation_button" id="invitation_button"><span>팀원 초대</span></button>
+                        </div>
                     </div>
 
                     <!-- content -->
@@ -85,14 +90,18 @@
                             <div class="mtcSchListTb">
                                 <table>
                                     <colgroup>
-                                        <col width="200">
+                                        <col width="70">
+                                        <col width="240">
                                         <col width="100">
-                                        <col width="250">
-                                        <col width="250">
-                                        <col width="160">
+                                        <col width="200">
+                                        <col width="300">
+                                        <col width="50">
                                     </colgroup>
                                     <thead>
                                         <tr>
+                                            <th scope="col">
+                                                <div></div>
+                                            </th>
                                             <th scope="col">
                                                 <div>초대 일시</div>
                                             </th>
@@ -106,14 +115,19 @@
                                                 <div>이메일</div>
                                             </th>
                                             <th scope="col">
-                                                <div>관리</div>
+                                                <div></div>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!-- server: 팀원이 있을 경우 -->
                                         <!-- server: 초대된 팀원이 있을 때 동적으로 생성 -->
                                         <!-- server: 최대 5명정도씩 불러오도록 -->
                                         <tr>
+                                            <td>
+                                                <!-- <span class="status waiting">대기중</span> -->
+                                                <span class="status participating">참여중</span>
+                                            </td>
                                             <td>
                                                 <span class="date">2026/01/27 (화) 11:03</span>
                                             </td>
@@ -132,13 +146,36 @@
                                             </td>
                                             <td>
                                                 <span>
-                                                    <button type="button" class="memberDelButton" id="teamMemberDelBtn"><span>삭제</span></button>
+                                                    <button type="button" class="moreOptionButton">
+                                                        <span>
+                                                            <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                                                        </span>
+                                                    </button>
                                                 </span>
                                             </td>
                                         </tr>
-                                    </tbody>
 
+                                        <!-- server: 팀원이 없을 경우 -->
+                                        <!-- <tr class="no-team-member">
+                                            <td>
+                                                <div class="no-team-member-wrap">
+                                                    <p class="tx">
+                                                        <strong>초대된 팀원이 없습니다.</strong>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr> -->
+                                    </tbody>
                                 </table>
+
+                                <!-- javascript: moreOptionButton 을 클릭 시 active 추가 -->
+                                <div class="more-option">
+                                    <ul>
+                                        <li>
+                                            <button type="button" class="memberDelBtn">내보내기</button>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="bottom_area">
@@ -152,19 +189,66 @@
                             </div>
                         </div>
                         <div class="team_info">
-                            <strong>2단계 인증이란?</strong>
+                            <strong>팀원 초대란?</strong>
                             <ul class="infoList">
                                 <li>
-                                    <p>잡코리아 · 알바몬의 기업/서치펌 회원 계정 도용 시 인재 또는 지원자의 개인 정보 보호 등을 목적으로 개인 정보가 포함된 페이지 접근 시 2단계 인증이 적용됩니다.</p>
+                                    <p>팀원을 초대하여 기업 계정을 공동으로 관리할 수 있습니다.</p>
                                 </li>
                                 <li>
-                                    <p>인증번호 입력 시 2단계 인증이 완료되며 <span>3개월간 유효</span>합니다.</p></li>
+                                    <p>초대할 팀원의 이메일 주소로 초대 링크가 발송됩니다.</p>
+                                </li>
                                 <li>
-                                    <p><span>새 기기나 브라우저</span>에서 개인 정보가 포함된 페이지 접근 시 <span>2단계 인증이 추가로 필요</span>합니다.</p>
+                                    <p>
+                                        초대 대기 중인 팀원은 붉은색 아이콘으로, 수락하여 참여 중인 팀원은 녹색 아이콘으로 표시됩니다
+                                    </p>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- javascript: 초대 버튼 클릭 시 active 추가 -->
+            <div class="common-modal company-invitation-modal">
+                <div class="modal-dimmed"></div>
+                <div class="modal-contents">
+                    <button class="close-button"></button>
+                    <div class="modal-head">
+                        <h2>팀원 초대하기</h2>
+                        <p class="head-desc">
+                            팀원을 초대하여 기업 정보를 함께 관리하세요!
+                        </p>
+                    </div>
+                    <fieldset>
+                        <!-- server: 초대 이메일 보내기 -->
+                        <form method="post" id="form" name="form">
+                            <div class="modal-data">
+                                <p class="data-info">
+                                    초대할 팀원의 이메일 주소를 입력해 주세요.<br>
+                                    입력한 이메일로 초대 링크가 발송됩니다.<br>
+                                </p>
+                                <div class="data-info">
+                                    <!-- container -->
+                                    <div class="row_group">
+                                        <div class="form_email form_invitation flex-start">
+                                                <!-- <div class="col_1">
+                                                <div class="selWrap" style="width: 100px;">
+                                                    <p>이메일</p>
+                                                </div>
+                                            </div> -->
+                                            <div class="col_2 ">
+                                                <input type="text" id="invitation_mail" name="invitation_mail" size="4" maxlength="50" class="dev-mail" placeholder="이메일 주소 입력" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-bts">
+                                <!-- server: 회원탈퇴 페이지로 이동 -->
+                                <button type="button" class="modal-btn blue xl">초대하기</a>
+                            </div>
+                        </form>
+                    </fieldset>
                 </div>
             </div>
         </div>
