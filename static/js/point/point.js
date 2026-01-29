@@ -41,6 +41,9 @@ chargeButton.addEventListener("click", (e) => {
                                 </label>
                                 <div class="charge_area__1Ks2V">
                                     <button type="button" class="charge_button__3OgjR">
+                                        +5
+                                    </button>
+                                    <button type="button" class="charge_button__3OgjR">
                                         +10
                                     </button>
                                     <button type="button" class="charge_button__3OgjR">
@@ -51,9 +54,6 @@ chargeButton.addEventListener("click", (e) => {
                                     </button>
                                     <button type="button" class="charge_button__3OgjR">
                                         +500
-                                    </button>
-                                    <button type="button" class="charge_button__3OgjR">
-                                        +1000
                                     </button>
                                 </div>
                             </div>
@@ -71,7 +71,6 @@ chargeButton.addEventListener("click", (e) => {
                                 aria-expanded="false"
                                 class="charge_information_area_button__D0_jh"
                             >
-                                안내보기
                             </button>
                         </div>
                     </div>
@@ -147,11 +146,11 @@ chargeButton.addEventListener("click", (e) => {
             const text = e.target.textContent.trim();
             let result = 0;
 
-            if (text === "+1천") result = 1000;
-            else if (text === "+5천") result = 5000;
-            else if (text === "+1만") result = 10000;
-            else if (text === "+10만") result = 100000;
-            else if (text === "+100만") result = 1000000;
+            if (text === "+5") result = 5;
+            else if (text === "+10") result = 10;
+            else if (text === "+50") result = 50;
+            else if (text === "+100") result = 100;
+            else if (text === "+500") result = 500;
 
             const current = parseNumber(chargeInput.value);
             chargeInput.value = formatNumber(current + result);
@@ -159,7 +158,7 @@ chargeButton.addEventListener("click", (e) => {
         });
     });
 
-    // 10의자리 다 떨구기
+    // 10의자리 다 떨구기(지금은 필요없음)
     // chargeInput.addEventListener("blur", (e) => {
     //     let value = Number(e.target.value.replaceAll(",", ""));
     //     const rest = value % 1000;
@@ -214,7 +213,10 @@ chargeButton.addEventListener("click", (e) => {
 
         // NaN 체크
         if (isNaN(price) || price <= 0) {
-            alert("금액을 입력해주세요");
+            alert("충전할 별 개수를 입력해주세요");
+            return;
+        } else if (price < 1100) {
+            alert("별 충전은 10개 이상부터 가능합니다.");
             return;
         }
 
@@ -283,6 +285,7 @@ chargeButton.addEventListener("click", (e) => {
                 case "cancel":
                     // 사용자가 결제창을 닫을때 호출
                     console.log(e.message);
+                    alert("결제가 취소되었습니다. 다시 시도해주세요.");
                     break;
                 case "error":
                     // 결제 승인 중 오류 발생시 호출
@@ -299,4 +302,17 @@ chargeButton.addEventListener("click", (e) => {
 
     // 초기 총액 계산
     updateTotal();
+});
+
+// 구매취소
+const payCancelButton = document.querySelectorAll(".table_button__299bn");
+
+payCancelButton.forEach((payCancelButton) => {
+    payCancelButton.addEventListener("click", (e) => {
+        if (confirm("결제를 취소하시겠습니까?")) {
+            // 여기서 7일 안지났는지, 잔여수량 몇개인지 체크해야함
+            alert("취소되었습니다.");
+            location.href = "";
+        }
+    });
 });

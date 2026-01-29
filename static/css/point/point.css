@@ -20340,11 +20340,15 @@ strong.table_text__1aOIu {
     width: 75px;
     height: 32px;
     border: 1px solid #ddd;
-    border-radius: 5px;
     background-color: #fff;
     font-family: Sandoll Nemony2,Apple SD Gothic NEO,Helvetica Neue,Helvetica,ë‚˜ëˆ”ê³ ë”•,NanumGothic,Malgun Gothic,ë§‘ì€ ê³ ë”•,êµ´ë¦¼,gulim,ìƒˆêµ´ë¦¼,noto sans,sans-serif;
     font-size: 12px;
     color: inherit
+}
+
+.table_button__299bn:hover {
+    background-color: #006e3f;
+    color: white;
 }
 
 .table_pagination__1_l1l {
@@ -21243,7 +21247,6 @@ strong.table_text__1aOIu {
     -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.05),0 0 2px 0 rgba(0,0,0,.05);
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.05),0 0 2px 0 rgba(0,0,0,.05);
     border: 1px solid #ddd;
-    border-radius: 8px;
     background-color: #fff;
     font-family: Sandoll Nemony2,Apple SD Gothic NEO,Helvetica Neue,Helvetica,ë‚˜ëˆ”ê³ ë”•,NanumGothic,Malgun Gothic,ë§‘ì€ ê³ ë”•,êµ´ë¦¼,gulim,ìƒˆêµ´ë¦¼,noto sans,sans-serif
 }
@@ -21337,7 +21340,6 @@ strong.table_text__1aOIu {
     height: 32px;
     margin-left: 15px;
     padding: 0 15px;
-    border-radius: 5px;
     background-color: #ebedf3;
     font-family: inherit;
     font-size: 12px;
@@ -21347,6 +21349,11 @@ strong.table_text__1aOIu {
 .header_button__9mwzc.header_highlight__3hMnE {
     background-color: #7BA882;
     color: #fff
+}
+
+.header_button__9mwzc.header_highlight__3hMnE:hover{
+    background-color: #006e3f;
+    color: white;
 }
 
 .manage_auto_charge_box__3bnj5 {
