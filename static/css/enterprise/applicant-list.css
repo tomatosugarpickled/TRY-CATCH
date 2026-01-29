@@ -1,199 +1,189 @@
-body, button, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, table, td, textarea, th, ul {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    color: #333;
-    font-size: 13px;
-    letter-spacing: 0;
-    line-height: 1;
-    width: 100%;
-    background: #f3f5f7;
-}
-
-
-.blind, .skip, legend {
-    position: absolute !important;
-    top: -5000em;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    line-height: 0;
-    font-size: 0;
-}
-
-div {
+/* ============================================
+   리셋 및 기본 스타일
+   ============================================ */
+* {
     margin: 0;
     padding: 0;
-    border: 0;
     box-sizing: border-box;
 }
 
-button, fieldset, form, iframe {
-    border: 0;
-}
-
-a, body, button, input, select, td, textarea, th {
-    color: #333;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 13px;
-    letter-spacing: 0;
-    line-height: 1;
+    line-height: 1.5;
+    color: #333;
+    background: #f3f5f7;
 }
 
-li, ul {
+ul, ol {
     list-style: none;
 }
 
-a, img {
-    display: block;
-}
-
-a, a:active, a:focus, a:hover, a:link, a:visited {
-    color: #333;
+a {
+    color: inherit;
     text-decoration: none;
 }
 
 button {
+    border: none;
     background: none;
     cursor: pointer;
+    font: inherit;
+    color: inherit;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    empty-cells: show;
 }
 
-#container {
-    position: relative;
+input[type="checkbox"] {
+    display: none;
 }
 
-.applicant-list-container {
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* ============================================
+   레이아웃
+   ============================================ */
+.page-container {
+    max-width: 1260px;
     margin: 40px auto 0;
-    width: 1260px;
-    display: flex;
-    position: relative;
+    padding: 0 20px;
 }
 
-.applicant-list-section-wrapper {
-    position: relative;
-    width: 1020px;
-    margin: 0 0 0 10px;
-}
-
-.applicant-list-inner {
-    position: relative;
-    width: 1020px;
+.content-wrapper {
+    width: 100%;
+    max-width: 1020px;
     margin: 0 auto;
 }
 
-.applicant-list-border-round-section {
+.content-inner {
+    width: 100%;
+}
+
+.main-section {
     padding: 30px;
-    border-radius: 15px;
     background: #fff;
+    border-radius: 15px;
 }
 
-.applicant-list-border-round-section * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.applicant-list-status-box {
+/* ============================================
+   상태 통계 영역
+   ============================================ */
+.status-summary {
+    
     border-bottom: 1px solid #ebebeb;
-    height: 78px;
 }
 
-.status-box-topArea {
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    margin: 0 0 23px;
+.status-header {
+    margin-bottom: 23px;
 }
 
-.box-topArea-title {
+.status-title {
     font-size: 22px;
-    letter-spacing: -0.5px;
+    font-weight: 700;
     color: #000;
-    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-.status-box-list {
-    float: left;
+.status-tabs {
+    display: flex;
+    gap: 30px;
+    margin-left: 10px;
 }
 
-.applicant-list-status-box:after {
-    content: "";
+.status-tab {
+    position: relative;
     display: block;
-    clear: both;
+    padding-bottom: 9px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.applicant-list-section-wrapper .applicant-list-status-box .status-box-list li span.active {
+.status-tab:hover {
     color: #39f;
-    font-weight: 700;
 }
 
+.status-tab.active {
+    font-weight: 700;
+    color: #39f;
+}
 
-.status-box-list li span.active:before {
+.status-tab.active::before {
+    content: '';
     position: absolute;
     left: -12px;
+    right: 0;
     bottom: -1px;
-    content: "";
+    height: 4px;
     display: block;
     width: calc(100% + 24px);
-    height: 4px;
     background: #39f;
 }
 
-.applicant-list-section-wrapper .applicant-list-status-box .status-box-list li span {
-    position: relative;
-    padding-bottom: 9px;
-    line-height: 24px;
-    font-size: 16px;
-    letter-spacing: 0;
-    cursor: pointer;
+.status-tab em {
+    font-style: normal;
+    margin-left: 4px;
 }
 
-.status-box-list li:first-child {
-    padding-left: 12px;
+.status-tabs li:nth-child(5){
+    margin-inline-start: auto;
+    text-box-trim: trim-start;
+    gap: 5px;
 }
 
-.status-box-list li {
-    float: left;
-    padding: 0 18px;
-}
 
-.sort-select-box {
+
+/* ============================================
+   검색 및 필터 영역
+   ============================================ */
+.search-filter-area {
     position: relative;
     z-index: 4;
     margin-top: 20px;
 }
 
-.print-icon {
-    background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_position_print_bk.svg) no-repeat 0;
+/* clearfix */
+.search-filter-area::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-.sort-select-icon {
+/* 인쇄 버튼 */
+.btn-print {
     float: left;
     margin-top: 6px;
     padding-left: 23px;
     line-height: 20px;
     margin-right: 20px;
+    background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_position_print_bk.svg) no-repeat 0;
+    background-size: 18px;
 }
 
-.drop-down-box {
+.btn-print:hover {
+    opacity: 0.8;
+}
+
+/* 드롭다운 */
+.dropdown-wrapper {
     float: left;
     margin-top: 6px;
 }
 
-.button-box {
+.dropdown-wrapper .dropdown-trigger {
     position: relative;
-    float: left;
-}
-
-.sort-button {
     display: block;
     padding-right: 20px;
     line-height: 20px;
@@ -201,50 +191,45 @@ table {
     background-size: 14px 20px;
 }
 
-.sort-select-modal {
-    left: 0;
-    width: calc(100% + 13px);
-    margin-top: 8px;
-}
-
-.select-modal_common {
+.dropdown-menu {
     display: none;
     position: absolute;
-    width: 100%;
+    left: 81px;
+    width: calc(100% / 20px);
+    margin-top: 8px;
     background: #fff;
     z-index: 3;
     border-radius: 4px;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1490196078);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1490196078);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-.select-modal_common.active {
+.dropdown-menu.active {
     display: block;
 }
 
-.select-modal_common ul li {
+.dropdown-menu ul li {
     padding: 0 10px;
 }
 
-.select-modal_common ul li:hover {
+.dropdown-menu ul li:hover {
     background: #f7f8fa;
 }
 
-.select-modal_common ul li:nth-child(n+2) button {
+.dropdown-menu ul li:nth-child(n+2) button {
     border-top: 1px solid #eee;
 }
 
-.select-modal_common ul li button {
+.dropdown-menu ul li button {
     display: block;
     width: 100%;
     line-height: 34px;
     text-align: left;
     font-size: 11px;
     letter-spacing: 0;
-    
 }
 
-.fillter-button {
+/* 필터 토글 버튼 */
+.btn-filter-toggle {
     float: right;
     display: block;
     width: 32px;
@@ -254,29 +239,33 @@ table {
     background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_filter.png) no-repeat 50%;
 }
 
-.search-box {
+.btn-filter-toggle:hover {
+    border-color: #aaa;
+}
+
+/* 검색 입력 */
+.search-input-wrapper {
     float: right;
     width: 285px;
     margin-right: 10px;
     overflow: hidden;
-}
-
-.input-box_common {
     position: relative;
     height: 32px;
     border: 1px solid #d7d7d7;
     border-radius: 4px;
 }
 
-.input-box_common input {
+.search-input {
     display: block;
     width: 100%;
     height: 30px;
     padding-left: 10px;
     padding-right: 34px;
+    border: none;
+    outline: none;
 }
 
-.input-box_common .search-button {
+.btn-search {
     position: absolute;
     top: 0;
     right: 5px;
@@ -286,414 +275,513 @@ table {
     background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_search.png) no-repeat 50%;
 }
 
-/* 필터모달 */
+/* 히든 폼 - 실제로는 hidden input만 사용 */
+#searchForm {
+    display: contents;
+}
+/* ============================================
+   필터 모달
+   ============================================ */
 .filter-modal {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 45px;
     right: 0;
-    width: auto;
-    min-height: 380px;
-    border: 1px solid #323743;
+    min-width: 600px;
     background: #fff;
-    z-index: 5;
+    border: 1px solid #323743;
     border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 100;
 }
 
 .filter-modal.active {
     display: block;
 }
 
-.filter-modal>.content-box {
-    position: relative;
-    min-height: 320px;
-    padding: 20px 30px 15px;
+.filter-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px 30px;
 }
 
-.filter-modal>.content-box .filter-box {
-    float: left;
-    width: 140px;
+.filter-group {
+    min-width: 140px;
 }
 
-.filter-modal>.content-box .filter-box .title {
+.filter-group--wide {
+    flex: 1;
+}
+
+.filter-title {
     padding-bottom: 14px;
-    border-bottom: 1px solid #f0f0f0;
-    font-weight: 700;
-    line-height: 20px;
+    margin-bottom: 14px;
     font-size: 15px;
-    letter-spacing: 0;
+    font-weight: 700;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.filter-modal>.content-box .filter-box ul li {
-    margin-top: 15px;
+.filter-group ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.filter-modal>.content-box .filter-box ul li button.active {
+.filter-option {
+    text-align: left;
+    font-size: 13px;
+    line-height: 17px;
+    transition: all 0.3s;
+}
+
+.filter-option:hover {
+    color: #39f;
+}
+
+.filter-option.active {
     font-weight: 700;
     color: #39f;
 }
 
-.filter-modal>.content-box .filter-box ul li button {
-    line-height: 17px;
-}
-
-.filter-modal>.content-box .filter-box:nth-child(n+2) {
-    margin-left: 20px;
-}
-
-.filter-modal>.content-box .filter-box {
-    float: left;
-    width: 140px;
-}
-
-.filter-modal>.content-box .filter-box .gender-box {
+/* 성별 옵션 */
+.gender-options {
+    display: flex;
+    gap: 22px;
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid #f0f0f0;
 }
 
-.filter-modal>.content-box .filter-box .gender-box .checkbox {
-    float: left;
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
 }
 
-.filter-modal>.content-box .filter-box .gender-box .checkbox:nth-child(n+2) {
-    margin-left: 22px;
-}
-
-input[type=checkbox] {
-    display: none;
-}
-
-.checkbox-label_common.text-case {
-    width: auto;
+.checkbox-wrapper label {
     padding-left: 26px;
-    background-position: 0;
-    line-height: 18px;
+    font-size: 13px;
+    cursor: pointer;
+    background: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_off.png) no-repeat left center;
+    background-size: 18px;
 }
 
-input[type=checkbox]:checked+.checkbox-label_common {
+.checkbox-wrapper input:checked + label {
     background-image: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_on.png);
 }
 
-.checkbox-label_common {
-    display: block;
-    width: 18px;
-    height: 18px;
-    background: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_off.png) no-repeat 50%;
-}
-
-.filter-modal>.content-box:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.applicant-list-section .sort-select-box:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.filter-modal>.button-box {
+/* 기타 조건 그리드 */
+.filter-grid {
     display: flex;
-    position: relative;
-    min-height: 58px;
-    padding: 9px 29px 19px;
+    gap: 30px;
+}
+
+.filter-grid ul {
+    flex: 1;
+}
+
+/* 필터 하단 */
+.filter-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
     background: #f5f7fa;
     border-radius: 0 0 10px 10px;
 }
 
-.filter-modal>.button-box .filterSelItem {
-    width: 690px;
-    margin-top: 3px;
-    font-size: 13px;
-    letter-spacing: 0;
+.selected-filters {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.filter-modal>.button-box .filterSelItem .selItems .item {
-    display: flex;
-    position: relative;
-    float: left;
-    margin-top: 10.5px;
-    padding-right: 15px;
-    color: #333;
-    -webkit-box-align: center;
+.selected-filter-tag {
+    display: inline-flex;
     align-items: center;
-    font-size: 13px;
-    letter-spacing: 0;
+    gap: 8px;
+    padding: 4px 8px;
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
-.filter-modal>.button-box .filterSelItem .selItems .item .btnSelDel:before {
-    width: 9px;
-    height: 9px;
-    margin-left: 8px;
-    content: "";
-    background-position: -123px 0;
-    vertical-align: initial;
+.selected-filter-tag button {
+    width: 12px;
+    height: 12px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgM0wzIDkiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMyAzTDkgOSIgc3Ryb2tlPSIjNjY2IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=) no-repeat center;
+    background-size: contain;
 }
 
-.mtcBtn span, .mtcBtnB span, .mtcBtnA span, .mtcBtnM span, .mtcBtnB:before, .mtcBtnA:after, .mtcBtnM:before, .mtcBtnM:After {
-    position: relative;
-}
-
-.mtcBtn, .mtcBtnB:before, .mtcBtnA:after, .mtcBtnM:before, .mtcBtnM:After {
-    display: inline-block;
-    background: url(https://i.jobkorea.kr/content/images/ver_1/mtc/common/mtc_sp_btn.png) no-repeat;
-    box-sizing: border-box;
-}
- 
-.filter-modal>.button-box .search-button {
-    display: flex;
-    position: absolute;
-    top: 12px;
-    right: 29px;
-    width: 108px;
-    height: 34px;
-    margin-left: 20px;
+.btn-filter-search {
+    padding: 8px 24px;
     background: #39f;
     color: #fff;
-    text-align: center;
     border-radius: 4px;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-filter-search:hover {
+    background: #2080e0;
+}
+
+.btn-filter-reset {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.btn-filter-reset:hover {
+    color: #333;
+}
+
+/* ============================================
+   활성 필터 표시
+   ============================================ */
+.active-filters {
+    display: flex;
     align-items: center;
-}
-
-.filter-modal>.button-box .search-reset {
-    position: absolute;
-    top: 22.2px;
-    right: 157px;
-    padding-left: 20px;
-    background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_reset.png) no-repeat 1px -3px;
-}
-
-.filter-modal>.button-box:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.applicant-list-section-wrapper .sort-select-box:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.applicant-list-section-wrapper .search-keyword-box {
+    justify-content: space-between;
     padding: 10px 12px;
+    margin-top: 10px;
     border: 1px solid #333;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
-.applicant-list-section-wrapper .search-keyword-box .line-list li {
-    line-height: 20px;
+.filter-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.applicant-list-section-wrapper .search-keyword-box .line-list li:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.applicant-list-section-wrapper .search-keyword-box .line-list {
-    float: left;
-}
-
-.line-list>div:first-child, .line-list>li:first-child {
-    padding-left: 0 !important;
-}
-
-.line-list>li {
-    float: left;
-}
-
-.line-list>div, .line-list>li {
-    position: relative;
-    padding: 0 8px;
-}
-
-.applicant-list-section-wrapper .search-keyword-box .line-list li .title {
-    color: #666;
+.filter-list__label {
     font-weight: 700;
+    color: #666;
 }
 
-.line-list>div:nth-child(n+2):before, .line-list>li:nth-child(n+2):before {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    margin-top: -5px;
-    content: "";
-    display: block;
-    width: 1px;
-    height: 12px;
-    background: #e6e6e6;
-}
-
-.applicant-list-section-wrapper .search-keyword-box .line-list li:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.applicant-list-section-wrapper .search-keyword-box .reset-button {
-    float: right;
+.btn-clear-filters {
     padding-left: 20px;
-    line-height: 20px;
-    background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_reset.png) no-repeat 0;
+    font-size: 13px;
+    background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_reset.png) no-repeat left center;
 }
 
-.applicant-list-section-wrapper .search-keyword-box:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-/*  */
-.applicant-list-table {
-    table-layout: fixed;
+/* ============================================
+   지원자 테이블
+   ============================================ */
+.applicants-table {
     margin-top: 20px;
+    table-layout: fixed;
 }
 
-.applicant-list-section-wrapper .applicant-list-table th:first-child {
+.applicants-table thead th {
+    height: 40px;
+    background: #f5f7fa;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.col-checkbox {
     width: 38px;
     padding-left: 12px;
 }
 
-.applicant-list-section-wrapper .applicant-list-table th {
-    height: 40px;
-    background: #f5f7fa;
-    font-weight: 400;
+.col-photo {
+    width: 75px;
 }
 
-.flag-button {
-    display: block;
-    width: 18px;
-    height: 18px;
-    background: url(https://i.jobkorea.kr/content/images/corporate/position/button_flag_off.png) no-repeat 50%;
+.col-name {
+    width: 80px;
 }
 
-.applicant-list-table th .order-select-box {
-    position: relative;
-    display: table;
-    width: auto;
-    margin: 0 auto;
-}
-
-.applicant-list-section-wrapper .applicant-list-table th .order-select-box .order-button {
-    display: block;
-    line-height: 40px;
-    margin: 0 auto;
-}
-
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(2) {
-    width: 34px;
-    padding-left: 8px;
-}
-
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(3) {
+.col-statement {
     width: 165px;
-    padding-left: 8px;
 }
 
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(4) {
+.col-approve {
     width: 165px;
-    padding-left: 8px;
 }
 
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(5) {
+.col-reject {
     width: 165px;
-    padding-left: 8px;
 }
 
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(6) {
-    width: 125px;
+.col-time {
+    width: 165px;
 }
 
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(7) {
-    width: 125px;
-}
-
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(8) {
-    width: 125px;
-}
-
-.applicant-list-section-wrapper .applicant-list-table th:nth-child(9) {
+.col-actions {
     width: 17px;
 }
 
-.applicant-list-section-wrapper .applicant-list-table tr.data-none-case td {
+.sort-btn {
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+
+/* 체크박스 */
+.checkbox-all + label,
+.checkbox-item + label {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_off.png) no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.checkbox-all:checked + label,
+.checkbox-item:checked + label {
+    background-image: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_on.png);
+}
+
+/* 지원자 행 */
+.applicant-row td {
+    padding: 15px 0;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.applicant-row td:nth-child(1){
+    padding-left: 12px;
+}
+
+/* 프로필 사진 */
+.applicant-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-wrapper {
+    position: relative;
+    width: 68px;
+    height: 68px;
+}
+
+.photo-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photo-placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(https://i.jobkorea.kr/content/images/ver_1/mtc/common/mtc_sp_list.png) no-repeat -140px -66px;
+}
+
+/* 지원자 정보 */
+.applicant-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.applicant-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.applicant-age {
+    font-size: 13px;
+    color: #666;
+}
+
+/* 액션 버튼 */
+.btn-action {
+    padding: 0 15px;
+    height: 36px;
+    line-height: 34px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.btn-action:hover {
+    border-color: #777;
+    background: #f7f8fa;
+}
+
+/* 승인 시간 */
+.approval-time {
+    font-size: 13px;
+    color: #666;
+}
+
+/* 빈 상태 */
+.empty-state td {
     padding: 125px 0;
     text-align: center;
 }
 
-.applicant-list-section-wrapper .applicant-list-table td {
-    position: relative;
-    padding: 33px 0 64px;
-    vertical-align: top;
-    border-bottom: 1px solid #ebebeb;
-}
-
-.applicant-list-section-wrapper .applicant-list-table tr.data-none-case td .icon-frown {
+.empty-icon {
     width: 76px;
     height: 70px;
-    background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_frown.png) no-repeat 50%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
+    background: url(https://i.jobkorea.kr/content/images/corporate/position/icon_frown.png) no-repeat center;
 }
 
-.applicant-list-section-wrapper .applicant-list-table tr.data-none-case td .large-text {
-    line-height: 23px;
+.empty-title {
     font-size: 16px;
-    letter-spacing: 0;
     font-weight: 700;
-    margin-top: 20px;
+    line-height: 23px;
+    margin-bottom: 6px;
 }
 
-.applicant-list-section-wrapper .applicant-list-table tr.data-none-case td .text {
-    line-height: 18px;
-    color: grey;
-    margin-top: 6px;
+.empty-description {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
 }
 
-
-.applicant-list-section-wrapper .applicant-list-table tr.data-none-case td .btn-box {
-    margin: 20px 0 0;
-}
-
-.applicant-list-section-wrapper .applicant-list-table tr.data-none-case td .btn-box button {
+.btn-search-talents {
     padding: 16px 20px;
-    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 15px;
-    letter-spacing: 0;
-    line-height: 20px;
-    border: 1px solid #ccc;
-    color: #333;
+    transition: all 0.3s;
 }
 
-.applicant-list-section-wrapper .notice-box {
+.btn-search-talents:hover {
+    border-color: #39f;
+    color: #39f;
+}
+
+/* ============================================
+   안내 사항
+   ============================================ */
+.notice-box {
+    margin-top: 30px;
     padding: 20px;
     background: #fafbfc;
-    margin-top: 30px;
+    border-radius: 4px;
 }
 
-.point-bullet-list li {
+.notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notice-list li {
     position: relative;
     padding-left: 10px;
-    line-height: 18px;
     font-size: 12px;
-    letter-spacing: 0;
-    color: grey;
+    line-height: 18px;
+    color: #666;
 }
 
-.point-bullet-list li:nth-child(n+2) {
-    margin-top: 4px;
-}
-
-.point-bullet-list li:before {
+.notice-list li::before {
+    content: '·';
     position: absolute;
     left: 0;
     top: -2px;
-    content: "·";
+}
+
+/* ============================================
+   모달
+   ============================================ */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+    position: relative;
+    width: 320px;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.modal.active .modal__content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal__message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal__confirm {
+    padding: 10px 24px;
+    background: #2f6bff;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.modal__confirm:hover {
+    background: #1f55d6;
+}
+
+/* ============================================
+   반응형
+   ============================================ */
+@media (max-width: 1280px) {
+    .page-container {
+        max-width: 100%;
+    }
+    
+    .main-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-filter-area {
+        flex-wrap: wrap;
+    }
+    
+    .search-input-wrapper {
+        width: 100%;
+        order: -1;
+    }
+    
+    .filter-modal {
+        left: 0;
+        right: 0;
+        min-width: auto;
+    }
+    
+    .filter-content {
+        flex-direction: column;
+    }
 }
