@@ -16,7 +16,7 @@
                     <div class="border-round-section">
                         <div class="status-box">
                             <div class="topArea">
-                                <h2 class="subTits">포지션 제안 인재</h2>
+                                <h2 class="subTits">참여자 관리</h2>
                             </div>
                             <ul class="status-list">
                                 <!-- server, javascript: 서버에서 rPageCode를 쿼리스트링으로 보내 어떤 버튼인지 확인 후, 동적으로 active 추가  -->
@@ -30,21 +30,21 @@
                                 <li>
                                     <!-- onclick -->
                                     <a href="" class="" >
-                                        수락 
+                                        참여중 
                                         <em>0</em>
                                     </a>
                                 </li>
                                 <li>
                                     <!-- onclick -->
                                     <a href="" class="" >
-                                        거절 
+                                        승인대기
                                         <em>0</em>
                                     </a>
                                 </li>
                                 <li>
                                     <!-- onclick -->
                                     <a href="" class="" >
-                                        미응답 
+                                        승인거부/중도탈락 
                                         <em>0</em>
                                     </a>
                                 </li>
@@ -206,15 +206,99 @@
                             <button class="reset-button devSearchFilterResetBtn">초기화</button>
                         </div>
 
-                        <div class="applicant-list-table">
+                        <!-- 참여자 리스트 -->
+                        <table class="applicant-list-table">
                             <tbody>
                                 <tr>
                                     <th></th>
+                                    <th>
+                                        <!-- javascript: 클래스 active + up 추가 시 ↑, down 추가 시 ↓ -->
+                                        <button class="order-button ">이름/나이</button>
+                                        <!-- javascript: 버튼 클릭 시 active 추가 -->
+                                        <div class="order-select-modal name-age select-modal_common">
+                                            <ul>
+                                                <li>
+                                                    <!-- javascript: 버튼 선택 시 acitve 추가 -->
+                                                    <button type="button" class="devOrderItem " data-value="4">나이 많은순</button>
+                                                </li>
+                                                <li>
+                                                    <!-- javascript: 버튼 선택 시 acitve 추가 -->
+                                                    <button type="button" class="devOrderItem" data-value="5">나이 적은순</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </th>
 
+                                    <th>
+                                        <div class="order-select-box">
+                                            <button class="order-button  ">전화번호/이메일</button>
+                                        </div>
+                                    </th>
+
+                                    <th>
+                                        <div class="order-select-box">
+                                            <button class="order-button  ">자기소개서</button>
+                                        </div>
+                                    </th>
+
+                                    <th>
+                                        <div class="order-select-box">
+                                            <button class="order-button  ">승인</button>
+                                        </div>
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+
+                                <!-- server: data가 없을 경우 -->
+                                <!-- <tr class="data-none-case">
+                                    <td colspan="5">
+                                        <div class="icon-frown"></div>
+                                        <div class="large-text">포지션제안을 보낸 인재가 없습니다.</div>
+                                        <div class="text">좋은 인재에게 이직 제안 해보세요.</div>
+                                        <div class="btn-box"> -->
+                                            <!-- onclick -->
+                                            <!-- <button type="button" >인재검색하기</button>
+                                        </div>
+                                    </td>
+                                </tr> -->
+
+                                <!-- servere: data 있을 경우 -->
+                                <tr>
+                                    <td class="alLeft">
+                                        <div class="tdInner">
+                                            <a class="photoItem linkResume devLinkResume"></a>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
-                        </div>
+                        </table>
 
+                        <!-- <form name="sPrint" id="sPrint" action="/corp/person/resume_scrap_print" method="post">
+                            <input type="hidden" name="arrPKey">
+                            <input type="hidden" name="rPageCode" value="PC">
+                            <input type="hidden" name="arrR_No">
+                            <input type="hidden" name="arrM_ID">
+                        </form> -->
+
+                        <div class="notice-box">
+                            <ul class="point-bullet-list">
+                                <li>
+                                    잡코리아의 인재정보를 통해 수집된 개인정보 및 이력서/프로필은
+                                    <strong>개인정보보호정책에 의거 인재채용의 목적</strong>으로만 이용하셔야 합니다.
+                                </li>
+                                <li>
+                                    제안을 보낸 이력서/프로필은 발송일로부터 1년간 보관되며, 연락처 및 이력서/프로필은 열람 후, 90일간 확인 할 수 있습니다.
+                                </li>
+                                <li>
+                                    <strong>연락처 비공개 인재가 포지션 제안을 수락하면 연락처가 포함된 이력서/프로필을 확인</strong> 할 수 있습니다.
+                                </li>
+                                <li>
+                                    <strong>포지션제안 발송 후, 수락 전까지 인재에게 무료 1회 재발송 가능합니다.</strong>
+                                    (이후 추가 제안 또는 다른포지션으로 제안 시 상품 1건이 차감됩니다.)
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

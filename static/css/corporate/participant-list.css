@@ -39,11 +39,11 @@ body, html {
     box-sizing: border-box;
     width: 100%;
 }
-/* body {
+body {
     background: #f3f5f7;
     color: #333;
     font-size: 12px;
-} */
+}
 a, body, button, input, select, td, textarea, th {
     color: #333;
     font-size: 13px;
@@ -131,7 +131,7 @@ a, img {
 }
 .applicant-list-section .inner {
     position: relative;
-    width: 1020px;
+    width: 1260px;
     margin: 0 auto;
 }
 .border-round-section * {
@@ -549,4 +549,170 @@ input[type=checkbox]:checked+.checkbox-label_common {
 .applicant-list-section .applicant-list-table {
     table-layout: fixed;
     margin-top: 20px;
+}
+
+
+.applicant-list-section .applicant-list-table th {
+    height: 40px;
+    background: #f5f7fa;
+    font-weight: 400;
+}
+.applicant-list-section .applicant-list-table th:first-child {
+    width: 38px;
+    padding-left: 12px;
+}
+
+.applicant-list-section .applicant-list-table th .order-select-box {
+    position: relative;
+    display: table;
+    width: auto;
+    margin: 0 auto;
+}
+
+.applicant-list-section .applicant-list-table th .order-select-box .order-button {
+    display: block;
+    line-height: 40px;
+    margin: 0 auto;
+}
+.applicant-list-section .applicant-list-table th .order-select-box .order-button.active:after {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+.applicant-list-section .applicant-list-table th .order-select-box .order-button.down:after {
+    content: "↓";
+}
+.applicant-list-section .applicant-list-table th .order-select-box .order-button.up:after {
+    content: "↑";
+}
+.applicant-list-section .applicant-list-table th .order-select-box .order-button.active {
+    font-weight: 700;
+}
+
+
+.select-modal_common {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    z-index: 3;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1490196078);
+}
+.select-modal_common.active {
+    display: block;
+}
+.applicant-list-section .applicant-list-table th .order-select-box .order-select-modal {
+    margin-top: -2px;
+}
+.applicant-list-section .applicant-list-table th .order-select-box .order-select-modal.career, .applicant-list-section .applicant-list-table th .order-select-box .order-select-modal.education, .applicant-list-section .applicant-list-table th .order-select-box .order-select-modal.name-age {
+    width: 81px;
+}
+
+.select-modal_common ul li {
+    padding: 0 10px;
+}
+.applicant-list-section .applicant-list-table th .order-select-modal ul li button.active {
+    color: #39f;
+}
+
+
+.applicant-list-section .applicant-list-table th:nth-child(1) {
+    width: 125px;
+    padding-left: 8px;
+}
+.applicant-list-section .applicant-list-table th:nth-child(2) {
+    width: 165px;
+    padding-left: 8px;
+    text-align: left;
+}
+.applicant-list-section .applicant-list-table th:nth-child(3) {
+    width: 165px;
+}
+.applicant-list-section .applicant-list-table th:nth-child(4) {
+    width: 165px;
+}
+.applicant-list-section .applicant-list-table th:nth-child(5) {
+    width: 165px;
+}
+.applicant-list-section .applicant-list-table th:nth-child(6) {
+    width: 17px;
+}
+/* .applicant-list-section .applicant-list-table th:nth-child(7) {
+    width: 17px;
+} */
+
+.applicant-list-section .applicant-list-table td {
+    position: relative;
+    padding: 33px 0 64px;
+    vertical-align: top;
+    border-bottom: 1px solid #ebebeb;
+}
+.applicant-list-section .applicant-list-table tr.data-none-case td {
+    padding: 125px 0;
+    text-align: center;
+}
+.applicant-list-section .applicant-list-table tr.data-none-case td .icon-frown {
+    width: 76px;
+    height: 70px;
+    background: url("https://i.jobkorea.kr/content/images/corporate/position/icon_frown.png") no-repeat 50%;
+    margin: 0 auto;
+}
+.applicant-list-section .applicant-list-table tr.data-none-case td .large-text {
+    line-height: 23px;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.applicant-list-section .applicant-list-table tr.data-none-case td .text {
+    line-height: 18px;
+    color: grey;
+    margin-top: 6px;
+}
+.applicant-list-section .applicant-list-table tr.data-none-case td .btn-box {
+    margin: 20px 0 0;
+}
+.applicant-list-section .applicant-list-table tr.data-none-case td .btn-box button {
+    padding: 16px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+.applicant-list-section .notice-box {
+    padding: 20px;
+    background: #fafbfc;
+    margin-top: 30px;
+}
+.point-bullet-list li {
+    position: relative;
+    padding-left: 10px;
+    line-height: 18px;
+    font-size: 12px;
+    letter-spacing: 0;
+    color: grey;
+}
+.point-bullet-list li:before {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    content: "·";
+}
+.point-bullet-list li:nth-child(n+2) {
+    margin-top: 4px;
 }
