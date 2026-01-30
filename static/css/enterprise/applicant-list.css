@@ -366,7 +366,7 @@ input[type="checkbox"] {
 }
 
 .checkbox-wrapper input:checked + label {
-    background-image: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_on.png);
+    background-image: url(../../images/label_checkbox_common_on_recolor_006e3f.png);
 }
 
 /* 기타 조건 그리드 */
@@ -556,7 +556,7 @@ input[type="checkbox"] {
 
 .checkbox-all:checked + label,
 .checkbox-item:checked + label {
-    background-image: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_on.png);
+    background-image: url(../../images/label_checkbox_common_on_recolor_006e3f.png);
 }
 
 /* 지원자 행 */
